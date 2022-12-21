@@ -14,32 +14,31 @@
                 <tbody>
                     <tr *ngFor="let Experiencia of experiencia">
 
-                        <td>
-                            <h2>{{Experiencia.nombreE}}</h2>
-                        </td>
-                        <td>
-                            <p>{{Experiencia.descripcionE}}</p>
-                        </td>
+                        <td><h2>{{Experiencia.nombreE}}</h2></td>
+                        <td><p>{{Experiencia.descripcionE}}</p></td>
 
                         <td *ngIf="isLogged">
-                            <button mat-raised-button color="accent" routerLink="/editexp/{{Experiencia.id}}">
+                            <button mat-raised-button color="accent" 
+                                routerLink="/editexp/{{Experiencia.id}}">
                                 EDITAR
                             </button>
                         </td>
 
                         <td *ngIf="isLogged">
-
                             <div class="example-button-container">
-                                <button mat-fab color="warn" aria-label="Ex" style="margin-bottom: 5px;"
+                                <button mat-fab color="warn" aria-label="Ex" 
+                                    style="margin-bottom: 5px;"
                                     (click)="delete(Experiencia.id)">
                                     <mat-icon>delete</mat-icon>
                                 </button>
                             </div>
                         </td>
+
                     </tr>
                 </tbody>
             </table>
         </div>
 
     </div>
+    
 </div>

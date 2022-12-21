@@ -16,6 +16,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { NotFoundComponent } from "./component/not-found/not-found.component";
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatTableModule} from '@angular/material/table';
 
 
 
@@ -40,7 +41,8 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
         ReactiveFormsModule,
         MatProgressSpinnerModule,
         MatDividerModule,
-        MatSlideToggleModule
+        MatSlideToggleModule,
+        MatTableModule
     ],
     providers: [],
     exports: [
@@ -60,7 +62,9 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
         ReactiveFormsModule,
         MatProgressSpinnerModule,
         MatDividerModule,
-        MatSlideToggleModule
+        MatSlideToggleModule,
+        MatTableModule,
+        MatTableModule
         
     ]
 })

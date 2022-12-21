@@ -31,6 +31,7 @@ accent: $dark-accent, warn: $dark-warn, )));
   @include mat.core-theme($light-theme);
   @include mat.button-theme($light-theme);
   @include mat.toolbar-theme($light-theme);
+  @include mat.table-theme($light-theme);
   background: #fff;
   color: #222;
 }
@@ -40,6 +41,7 @@ accent: $dark-accent, warn: $dark-warn, )));
   @include mat.core-theme($dark-theme);
   @include mat.button-theme($dark-theme);
   @include mat.toolbar-theme($dark-theme);
+  @include mat.table-theme($dark-theme);
   background: #222;
   color: #fff;
 }

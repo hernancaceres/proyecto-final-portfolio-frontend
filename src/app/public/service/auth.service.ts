@@ -7,21 +7,21 @@ import { NuevoUsuario } from "src/app/core/modele/nuevo-usuario";
 import { environment } from "src/environments/environment";
 
 @Injectable({
-    providedIn: 'root'
-  })
-  export class AuthService {
+  providedIn: 'root'
+})
+export class AuthService {
 
-    //URL = 'https://ap2-production.up.railway.app/auth/';
+  // URL = 'https://ap2-production.up.railway.app/auth/';
 
-    URL = 'http://localhost:8080/auth/';
-  
-    constructor(private httpClient: HttpClient) { }
-  
-   public nuevo(nuevoUsuario: NuevoUsuario): Observable<any>{
-     return this.httpClient.post<any>(this.URL + 'nuevo', nuevoUsuario);
-   }
-  
-   public login(loginUsuario: LoginUsuario): Observable<JwtDto>{
-     return this.httpClient.post<JwtDto>(this.URL + 'login', loginUsuario)
-   }
+  URL = 'http://localhost:8080/auth/';
+
+  constructor(private httpClient: HttpClient) { }
+
+  public nuevo(nuevoUsuario: NuevoUsuario): Observable<any> {
+    return this.httpClient.post<any>(this.URL + 'nuevo', nuevoUsuario);
   }
+
+  public login(loginUsuario: LoginUsuario): Observable<JwtDto> {
+    return this.httpClient.post<JwtDto>(this.URL + 'login', loginUsuario)
+  }
+}

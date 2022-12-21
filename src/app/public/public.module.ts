@@ -19,6 +19,8 @@ import { ExperienciaComponent } from './components/experiencia/containers/experi
 import { NewExperienciaComponent } from './components/experiencia/components/new-experiencia/new-experiencia.component';
 import { EditExperienciaComponent } from './components/experiencia/components/edit-experiencia/edit-experiencia.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { AcercaDeComponent } from './components/acerca-de/containers/acerca-de.component';
+import { EditAcercaDeComponent } from './components/acerca-de/components/edit-acerca-de/edit-acerca-de.component';
 
 
 
@@ -36,6 +38,8 @@ import { FooterComponent } from './components/footer/footer.component';
     FooterComponent,
     NewExperienciaComponent,
     EditExperienciaComponent,
+    AcercaDeComponent,
+    EditAcercaDeComponent,
 
 
   ],
