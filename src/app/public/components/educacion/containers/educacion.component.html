@@ -1,0 +1,33 @@
+<div style="text-align: center; background: inherit">
+    <div class="row">
+        <h1>Educacion</h1>
+        <div class="col-lg-2">
+            <button mat-raised-button color="primary" routerLink="/newedu" *ngIf="isLogged">
+                Nueva Educacion
+            </button>
+        </div>
+
+        <div class="col lg 1"></div>
+        <div class="col-lg-11">
+            <table class="table">
+                <tbody>
+                    <tr *ngFor="let Educacion of educacion">
+                        <td>
+                            <h2>{{Educacion.nombreE}}</h2>
+                        </td>
+                        <td><p>{{Educacion.descripcionE}}</p></td>
+                        <td *ngIf="isLogged">
+                            <button mat-raised-button color="accent" routerLink="/editaredu/{{Educacion.id}}">
+                                EDITAR</button>
+                        </td>
+                        <td *ngIf="isLogged">
+                            <button mat-fab color="warn" aria-label="Ex" style="margin-bottom: 5px;" (click)="delete(Educacion.id)">
+                                <mat-icon>delete</mat-icon></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>
