@@ -1,4 +1,4 @@
-<div style="text-align: center; background: inherit">
+<div style=" background: inherit">
     <div class="row">
         <h1>Educacion</h1>
         <div class="col-lg-2">
@@ -12,18 +12,34 @@
             <table class="table">
                 <tbody>
                     <tr *ngFor="let Educacion of educacion">
-                        <td>
-                            <h2>{{Educacion.nombreE}}</h2>
-                        </td>
-                        <td><p>{{Educacion.descripcionE}}</p></td>
-                        <td *ngIf="isLogged">
-                            <button mat-raised-button color="accent" routerLink="/editaredu/{{Educacion.id}}">
-                                EDITAR</button>
-                        </td>
-                        <td *ngIf="isLogged">
-                            <button mat-fab color="warn" aria-label="Ex" style="margin-bottom: 5px;" (click)="delete(Educacion.id)">
-                                <mat-icon>delete</mat-icon></button>
-                        </td>
+
+                        <div cdkDropListGroup>
+
+                            <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
+
+                                <div class="example-box" *ngFor="let movie of movies" cdkDrag>
+                                    <div class="example-custom-placeholder" *cdkDragPlaceholder></div>
+                                    {{movie}}
+                                    <td>
+                                        <h3>{{Educacion.nombreE}}</h3>
+                                    </td>
+                                    <td>
+                                        <p>{{Educacion.descripcionE}}</p>
+                                    </td>
+                                    <td *ngIf="isLogged">
+                                        <button mat-raised-button color="accent"
+                                            routerLink="/editaredu/{{Educacion.id}}">
+                                            EDITAR</button>
+                                    </td>
+                                    <td *ngIf="isLogged">
+                                        <button mat-fab color="warn" aria-label="Ex" style="margin-bottom: 5px;"
+                                            (click)="delete(Educacion.id)">
+                                            <mat-icon>delete</mat-icon></button>
+                                    </td>
+                                </div>
+                            </div>
+                        </div>
+
                     </tr>
                 </tbody>
             </table>

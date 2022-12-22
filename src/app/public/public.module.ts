@@ -21,6 +21,14 @@ import { EditExperienciaComponent } from './components/experiencia/components/ed
 import { FooterComponent } from './components/footer/footer.component';
 import { AcercaDeComponent } from './components/acerca-de/containers/acerca-de.component';
 import { EditAcercaDeComponent } from './components/acerca-de/components/edit-acerca-de/edit-acerca-de.component';
+import { ImageService } from './service/image.service';
+import { PersonaService } from './service/persona.service';
+import { SkillService } from './service/skill.service';
+import { CircleProgComponent } from './components/circle-prog/containers/circle-prog.component';
+import { EditSkillComponent } from './components/circle-prog/components/edit-skill/edit-skill.component';
+import { NewSkillComponent } from './components/circle-prog/components/new-skill/new-skill.component';
+import { NgCircleProgressModule } from 'ng-circle-progress';
+import { ProyectoService } from './service/proyecto.service';
 
 
 
@@ -40,19 +48,29 @@ import { EditAcercaDeComponent } from './components/acerca-de/components/edit-ac
     EditExperienciaComponent,
     AcercaDeComponent,
     EditAcercaDeComponent,
+    CircleProgComponent,
+    EditSkillComponent,
+    NewSkillComponent
+    
 
 
   ],
   imports: [
     CommonModule,
     PublicRoutingModule,
-    SharedModule
+    SharedModule,
+    NgCircleProgressModule.forRoot({ })
   ],
   providers: [
     AuthService,
     TokenService,
     ExperienciaService,
     EducacionService,
+    PersonaService,
+    ImageService,
+    SkillService,
+    ProyectoService
+    
 
   ],
 })
