@@ -11,6 +11,7 @@ import { NewExperienciaComponent } from './components/experiencia/components/new
 
 import { HomeComponent } from './components/home/container/home.component';
 import { LoginComponent } from './components/login/containers/login.component';
+import { NewProyectoComponent } from './components/proyectos/components/nuevo-proyecto/new-proyecto.component';
 import { PublicComponent } from './public.component';
 
 
@@ -27,6 +28,7 @@ const routes: Routes = [
       { path: 'editacercade/:id', component: EditAcercaDeComponent },
       { path: 'newskill', component: NewSkillComponent },
       { path: 'editskill/:id', component: EditSkillComponent },
+      { path: 'newproyect', component: NewProyectoComponent },
 
     ]
   },

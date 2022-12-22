@@ -20,8 +20,9 @@
                                 <div class="example-box" *ngFor="let movie of movies" cdkDrag>
                                     <div class="example-custom-placeholder" *cdkDragPlaceholder></div>
                                     {{movie}}
+                                    
                                     <td>
-                                        <h3>{{Educacion.nombreE}}</h3>
+                                        <mat-icon>bookmark</mat-icon><h3>{{Educacion.nombreE}}</h3>
                                     </td>
                                     <td>
                                         <p>{{Educacion.descripcionE}}</p>

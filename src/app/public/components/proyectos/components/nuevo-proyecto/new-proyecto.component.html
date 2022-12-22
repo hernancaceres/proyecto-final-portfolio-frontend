@@ -1,0 +1,8 @@
+<div class="form-group">
+
+      <input type="file" (change)="uploadImage($event)">
+
+   <div class="images"><img [src]="image" *ngFor="let image of images" width="200"></div>
+   
+</div>
+

@@ -29,6 +29,8 @@ import { EditSkillComponent } from './components/circle-prog/components/edit-ski
 import { NewSkillComponent } from './components/circle-prog/components/new-skill/new-skill.component';
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { ProyectoService } from './service/proyecto.service';
+import { ProyectoComponent } from './components/proyectos/containers/proyecto.component';
+import { NewProyectoComponent } from './components/proyectos/components/nuevo-proyecto/new-proyecto.component';
 
 
 
@@ -50,7 +52,9 @@ import { ProyectoService } from './service/proyecto.service';
     EditAcercaDeComponent,
     CircleProgComponent,
     EditSkillComponent,
-    NewSkillComponent
+    NewSkillComponent,
+    ProyectoComponent,
+    NewProyectoComponent
     
 
 
