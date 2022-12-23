@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { EditAcercaDeComponent } from './components/acerca-de/components/edit-acerca-de/edit-acerca-de.component';
 import { EditSkillComponent } from './components/circle-prog/components/edit-skill/edit-skill.component';
 import { NewSkillComponent } from './components/circle-prog/components/new-skill/new-skill.component';
+import { CircleProgComponent } from './components/circle-prog/containers/circle-prog.component';
 import { EditeducacionComponent } from './components/educacion/components/edit-educacion/editeducacion.component';
 import { NeweducacionComponent } from './components/educacion/components/new-educacion/neweducacion.component';
 import { EditExperienciaComponent } from './components/experiencia/components/edit-experiencia/edit-experiencia.component';
@@ -26,6 +27,7 @@ const routes: Routes = [
       { path: 'newexp', component: NewExperienciaComponent },
       { path: 'editexp/:id', component: EditExperienciaComponent },
       { path: 'editacercade/:id', component: EditAcercaDeComponent },
+      { path: 'skill', component: CircleProgComponent },
       { path: 'newskill', component: NewSkillComponent },
       { path: 'editskill/:id', component: EditSkillComponent },
       { path: 'newproyect', component: NewProyectoComponent },

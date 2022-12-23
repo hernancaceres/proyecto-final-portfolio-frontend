@@ -8,10 +8,16 @@
       </div>
 
       <div class="modos">
-        <button mat-raised-button color="warn">git</button>
+        
         <button mat-raised-button color="warn"><span class="material-symbols-outlined">nest_heat_link_gen_3
           </span></button>
-        <button mat-raised-button color="warn">linkedin<mat-icon>linkedin-box</mat-icon></button>
+        
+        <button mat-raised-button color="Accent"><mat-icon>facebook</mat-icon></button>
+        <button mat-raised-button color="primary">
+        <span class="material-symbols-outlined">login</span>
+        </button>
+        <button mat-raised-button color="warn"><mat-icon>settings_power</mat-icon></button>
+        
 
         <button mat-raised-button color="Accent" (click)="onSetTheme('dark-theme')">
           <span class="material-symbols-outlined">dark_mode</span>
@@ -20,6 +26,9 @@
         <button mat-raised-button color="primary" (click)="onSetTheme('light-theme')">
           <span class="material-symbols-outlined">light_mode</span>
         </button>
+
+        <button type="button" class="btn btn-outline-light" (click)="login()" *ngIf="!isLogged">INGRESAR</button>
+        <button type="button" class="btn btn-outline-light" (click)="onLogOut()" *ngIf="isLogged">CERRARSESION</button>
       </div>
 
     </div>

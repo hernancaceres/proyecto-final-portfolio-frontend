@@ -1,36 +1,61 @@
 
 import { OverlayContainer } from '@angular/cdk/overlay';
-import { Component, EventEmitter, HostBinding, Input, OnInit, Output,} from '@angular/core';
+import { Component, EventEmitter, HostBinding, Input, OnInit, Output, } from '@angular/core';
 import { MatSlideToggleChange } from '@angular/material/slide-toggle';
+import { Router } from '@angular/router';
+import { TokenService } from './service/token.service';
 
 
 @Component({
-    selector: 'app-public',
-    templateUrl: './public.component.html',
-    styleUrls: ['./public.component.css']
+  selector: 'app-public',
+  templateUrl: './public.component.html',
+  styleUrls: ['./public.component.css']
 })
 export class PublicComponent implements OnInit {
 
-    title = "Material-Switcher";
+  isLogged = false;
 
-    @HostBinding("class") componetCssClass: any;
-  
-    constructor(public overlayContainer: OverlayContainer) { }
-  
-    public onSetTheme(e : string){
-      this.overlayContainer.getContainerElement().classList.add(e);
-      this.componetCssClass = e;
+  //comienza material
+  title = "Material-Switcher";
+  @HostBinding("class") componetCssClass: any;
+  //termina material
+
+  constructor(
+    public overlayContainer: OverlayContainer,
+    private router: Router,
+    private tokenService: TokenService) { }
+
+  ngOnInit(): void {
+    if (this.tokenService.getToken()) {
+      this.isLogged = true;
+    } else {
+      this.isLogged = false;
     }
+  }
 
-    ngOnInit(): void { }
+  onLogOut(): void {
+    this.tokenService.logOut();
+    window.location.reload();
+  }
 
-    @Input()
-    isDarkMode = false;
-  
-    @Output()
-    readonly darkModeSwitched = new EventEmitter<boolean>();
-  
-    onDarkModeSwitched({ checked }: MatSlideToggleChange) {
-      this.darkModeSwitched.emit(checked);
-    }
+  login() {
+    this.router.navigate(['/login'])
+  }
+
+  //comienza material
+  public onSetTheme(e: string) {
+    this.overlayContainer.getContainerElement().classList.add(e);
+    this.componetCssClass = e;
+  }
+
+  @Input()
+  isDarkMode = false;
+
+  @Output()
+  readonly darkModeSwitched = new EventEmitter<boolean>();
+
+  onDarkModeSwitched({ checked }: MatSlideToggleChange) {
+    this.darkModeSwitched.emit(checked);
+  }
+  //termina material
 }

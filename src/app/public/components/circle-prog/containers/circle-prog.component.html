@@ -1,8 +1,9 @@
+<app-header></app-header>
 <div class="row">
 
     <h1>Hard & Soft skills</h1>
     <div class="col-lg-2">
-        <button type="button" routerLink="/newskill" class="btn btn-dark" *ngIf="isLogged">Nueva Skill</button>
+        <button button mat-raised-button color="primary" routerLink="/newskill" *ngIf="isLogged">Nueva Skill</button>
     </div>
 
 
@@ -44,4 +45,5 @@
     </div>
 </div>
 
-<mat-divider></mat-divider>
+<mat-divider></mat-divider> 
+<app-footer></app-footer>

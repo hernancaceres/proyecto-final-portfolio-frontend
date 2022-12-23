@@ -33,8 +33,8 @@ accent: $dark-accent, warn: $dark-warn, )));
   @include mat.toolbar-theme($light-theme);
   @include mat.table-theme($light-theme);
   @include mat.divider-theme($light-theme);
-  background: #fff;
-  color: #222;
+  background: rgba(234, 236, 238, 0.863);
+  color: rgb(2, 2, 2);
 }
 
 // aplicar nuestro tema oscuro a angular
