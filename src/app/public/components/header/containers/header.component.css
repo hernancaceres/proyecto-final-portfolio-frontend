@@ -1,40 +1,16 @@
 div{
     background-color: black;
+    text-align: right;
 }
 
-.container{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
 
-.redes{
-    margin-right: 0.5em;
-}
 
-#logo{
-    width: 150px;
-}
-
-.redes i{
-    font-size: 27px;
-}
-
-/*--- para la vista de celular ---*/
-
-@media (max-width:575px){
-
-    .container {
-        flex-direction: column;
-    }
+.login{
     
-    .redes{
-         display: flex;
-         flex-direction: column;
-         align-items: center;
-         margin: 0.5em;
-    }  
+    text-align: right;
 }
+
+
 
 
 

@@ -1,14 +1,10 @@
 <div class="row">
     <div class="container">
 
-        <div class="logo">
-            <img src="../../../../../assets/imagenes/APLogo.png" id="logo">
-        </div>
+        
 
-        <div class="redes">
-            <button mat-raised-button color="primary" >github</button>
-            <button mat-raised-button color="warn" >instagram</button>
-            <button mat-raised-button color="Accent" >linkedin</button>
+        <div class="login">
+        
             
             <button type="button" class="btn btn-outline-light" (click)="login()" *ngIf="!isLogged">INGRESAR</button>
             <button type="button" class="btn btn-outline-light" (click)="onLogOut()" *ngIf="isLogged">CERRARSESION</button> 

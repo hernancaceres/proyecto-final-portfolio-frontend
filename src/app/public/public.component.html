@@ -1,4 +1,4 @@
-<div style="text-align: center; background: inherit">
+<div style="  background: inherit">
   <h1>public component</h1>
   <p>usuarios works!</p>
   <section>
@@ -140,20 +140,28 @@
   </div>
 
 
-  <br />
-  <br />
+  <div class="row">
+    <div class="container">
 
-  <div class="example-botton-row">
-    <button mat-stroked-button color="Accent" (click)="onSetTheme('dark-theme')">Dark-Theme</button>
-    <button mat-raised-button color="primary" (click)="onSetTheme('light-theme')">Light-Theme</button>
+      <div class="logo">
+        <img src="../../../../../assets/imagenes/APLogo.png" id="logo">
+      </div>
+
+      <div class="modos">
+        <button mat-raised-button color="warn">git</button>
+        <button mat-raised-button color="warn">instagram</button>
+        <button mat-raised-button color="warn">linkedin<mat-icon>linkedin-box</mat-icon></button>
+
+        <button mat-raised-button color="Accent" (click)="onSetTheme('dark-theme')">
+          <span class="material-symbols-outlined">dark_mode</span>
+        </button>
+
+        <button mat-raised-button color="primary" (click)="onSetTheme('light-theme')">
+          <span class="material-symbols-outlined">light_mode</span>
+        </button>
+      </div>
+
+    </div>
   </div>
-  <span>
-    <mat-slide-toggle [checked]="isDarkMode" (change)="onDarkModeSwitched($event)">Dark Mode</mat-slide-toggle>
-  </span>
-
-
-  <br />
-  <br />
   <router-outlet></router-outlet>
 </div>
-
