@@ -6,9 +6,9 @@
         </div>
 
         <div class="redes">
-            <button mat-raised-button color="primary" >github</button>
-            <button mat-raised-button color="warn" >instagram</button>
-            <button mat-raised-button color="Accent" >linkedin</button>
+            <button mat-raised-button color="primary" ><mat-icon>twitter</mat-icon></button>
+            <button mat-raised-button color="warn" ><mat-icon>linkedin</mat-icon></button>
+            <button mat-raised-button color="Accent" ><mat-icon>facebook</mat-icon></button>
             
             <button type="button" class="btn btn-outline-light" (click)="login()" *ngIf="!isLogged">INGRESAR</button>
             <button type="button" class="btn btn-outline-light" (click)="onLogOut()" *ngIf="isLogged">CERRARSESION</button> 
