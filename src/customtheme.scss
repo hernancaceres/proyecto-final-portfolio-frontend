@@ -32,6 +32,7 @@ accent: $dark-accent, warn: $dark-warn, )));
   @include mat.button-theme($light-theme);
   @include mat.toolbar-theme($light-theme);
   @include mat.table-theme($light-theme);
+  @include mat.divider-theme($light-theme);
   background: #fff;
   color: #222;
 }
@@ -42,6 +43,7 @@ accent: $dark-accent, warn: $dark-warn, )));
   @include mat.button-theme($dark-theme);
   @include mat.toolbar-theme($dark-theme);
   @include mat.table-theme($dark-theme);
+  @include mat.divider-theme($dark-theme);
   background: #222;
   color: #fff;
 }

@@ -1,16 +1,20 @@
-<div class="row">
-    <div class="container">
+<div class="row" class="px-0" >
+    <div class="container" >
 
-        <div class="redes">
-            <button mat-raised-button color="primary" >twitter</button>
-            <button mat-raised-button color="warn" >linkedin</button>
-            <button mat-raised-button color="Accent" ><mat-icon>facebook</mat-icon></button>
-        <div class="login">
-            
-            <button type="button" class="btn btn-outline-light" (click)="login()" *ngIf="!isLogged">INGRESAR</button>
-            <button type="button" class="btn btn-outline-light" (click)="onLogOut()" *ngIf="isLogged">CERRARSESION</button> 
-            
-            
+        <div class="login" >
+
+            <button mat-raised-button color="primary">
+            <span class="material-symbols-outlined">login</span>
+            </button>
+            <button mat-raised-button color="warn"><mat-icon>settings_power</mat-icon></button>
+            <button mat-raised-button color="Accent"><mat-icon>facebook</mat-icon></button>
+
+
+            <button type="button" class="btn btn-outline-light" (click)="login()" 
+            *ngIf="!isLogged">INGRESAR</button>
+            <button type="button" class="btn btn-outline-light" (click)="onLogOut()"
+            *ngIf="isLogged">CERRARSESION</button>
+
         </div>
     </div>
-</div>  
+</div>

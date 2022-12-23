@@ -2,7 +2,7 @@
     <h1>Proyectos realizados</h1>
     <div class="contenedor" *ngFor="let Proyecto of proyecto">
         <div class="col-sm-12 col-md-7 col-lg-7 parte1">
-            <h2>{{Proyecto.nombreP}}</h2>
+             <h2>{{Proyecto.nombreP}}</h2>
 
             <h3>{{Proyecto.descripcionP}}</h3>
         </div>
@@ -13,13 +13,13 @@
 
         <div *ngIf="isLogged">
             <button mat-raised-button color="primary" routerLink="/editarexp/{{Proyecto.id}}">
-                EDITAR
+                <mat-icon>edit</mat-icon>
             </button>
         </div>
 
         <div *ngIf="isLogged">
             <button mat-fab color="warn" aria-label="Ex" style="margin-bottom: 5px;" (click)="delete(Proyecto.id)">
-                <mat-icon>X</mat-icon>
+                <mat-icon>delete</mat-icon>
             </button>
 
         </div>

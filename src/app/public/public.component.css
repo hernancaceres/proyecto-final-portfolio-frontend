@@ -6,12 +6,10 @@ div{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    
 }
 
-.modos{
-    margin-right: 0.5em;
-    text-align: right;
-}
+
 
 #logo{
     width: 150px;

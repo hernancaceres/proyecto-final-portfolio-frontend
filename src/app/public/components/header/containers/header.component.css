@@ -1,14 +1,12 @@
 div{
-    background-color: black;
+    background-color: rgb(25, 2, 59);
     text-align: right;
+    margin-right: 0px;
+    padding-right: 2px;
 }
 
 
 
-.login{
-    
-    text-align: right;
-}
 
 
 
