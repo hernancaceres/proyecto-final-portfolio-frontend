@@ -1,4 +1,5 @@
 
+import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { Component, OnInit } from '@angular/core';
 import { Experiencia } from 'src/app/core/modele/experiencia';
 import { ExperienciaService } from 'src/app/public/service/experiencia.service';
@@ -12,6 +13,12 @@ import { TokenService } from 'src/app/public/service/token.service';
 })
 export class ExperienciaComponent implements OnInit {
 
+  //comienza toogle
+  movies= [''];
+  drop(event: CdkDragDrop<string[]>) {
+    moveItemInArray(this.movies, event.previousIndex, event.currentIndex);
+  }
+  //termina toogle
 
   experiencia: Experiencia[] = [];
 
@@ -47,3 +54,4 @@ export class ExperienciaComponent implements OnInit {
     }
   }
 }
+ 

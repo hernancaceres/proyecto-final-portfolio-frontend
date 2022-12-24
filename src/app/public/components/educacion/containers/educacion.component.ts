@@ -11,15 +11,19 @@ import { TokenService } from 'src/app/public/service/token.service';
 })
 export class EducacionComponent implements OnInit {
 
+  //comienza toogle
   movies= [''];
   drop(event: CdkDragDrop<string[]>) {
     moveItemInArray(this.movies, event.previousIndex, event.currentIndex);
   }
-
+  //termina toogle
 
   educacion: Educacion[] = [];
 
-  constructor(private educacionS: EducacionService, private tokenService: TokenService) { }
+  constructor(
+    private educacionS: EducacionService, 
+    private tokenService: TokenService) { }
+    
   isLogged = false;
 
   ngOnInit(): void {

@@ -31,6 +31,7 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
 import { ProyectoService } from './service/proyecto.service';
 import { ProyectoComponent } from './components/proyectos/containers/proyecto.component';
 import { NewProyectoComponent } from './components/proyectos/components/nuevo-proyecto/new-proyecto.component';
+import { EditProyectoComponent } from './components/proyectos/components/edit-proyecto/edit-proyecto.component';
 
 
 
@@ -54,7 +55,8 @@ import { NewProyectoComponent } from './components/proyectos/components/nuevo-pr
     EditSkillComponent,
     NewSkillComponent,
     ProyectoComponent,
-    NewProyectoComponent
+    NewProyectoComponent,
+    EditProyectoComponent
     
 
 

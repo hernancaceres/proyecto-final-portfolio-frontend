@@ -15,6 +15,7 @@ import { ExperienciaComponent } from './components/experiencia/containers/experi
 
 import { HomeComponent } from './components/home/container/home.component';
 import { LoginComponent } from './components/login/containers/login.component';
+import { EditProyectoComponent } from './components/proyectos/components/edit-proyecto/edit-proyecto.component';
 import { NewProyectoComponent } from './components/proyectos/components/nuevo-proyecto/new-proyecto.component';
 import { ProyectoComponent } from './components/proyectos/containers/proyecto.component';
 import { PublicComponent } from './public.component';
@@ -39,6 +40,7 @@ const routes: Routes = [
       { path: 'editskill/:id', component: EditSkillComponent },
       { path: 'proyecto', component: ProyectoComponent },
       { path: 'newproyect', component: NewProyectoComponent },
+      { path: 'editproyecto/:id', component: EditProyectoComponent },
 
     ]
   },
