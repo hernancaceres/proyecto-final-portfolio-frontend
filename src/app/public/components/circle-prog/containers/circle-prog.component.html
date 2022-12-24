@@ -1,4 +1,3 @@
-<app-header></app-header>
 <div class="row">
 
     <h1>Hard & Soft skills</h1>
@@ -8,35 +7,20 @@
 
 
     <div class="text-center col-sm-4 col-md-4 col-lg-4 circulo" *ngFor="let skill of skill">
-        <circle-progress 
-        [percent]="(skill.porcentaje)" 
-        [radius]="73" 
-        [title]="(skill.nombreC)" 
-        [titleColor]="'red'" 
-        [showTitle]="true"    
-        [showUnits]="false" 
-        [showSubtitle]="false" 
-        [outerStrokeWidth]="13" 
-        [innerStrokeWidth]="2"
-        [outerStrokeColor]="'red'" 
-        [innerStrokeColor]="'red'" 
-        [animation]="true" 
-        [animationDuration]="800"
-        >
+        <circle-progress [percent]="(skill.porcentaje)" [radius]="73" [title]="(skill.nombreC)" [titleColor]="'red'"
+            [showTitle]="true" [showUnits]="false" [showSubtitle]="false" [outerStrokeWidth]="13" [innerStrokeWidth]="2"
+            [outerStrokeColor]="'red'" [innerStrokeColor]="'red'" [animation]="true" [animationDuration]="800">
         </circle-progress>
 
         <div>
             <td *ngIf="isLogged">
-                <button mat-raised-button color="primary" 
-                routerLink="/editskill/{{skill.id}}">
-                <mat-icon>edit</mat-icon>
+                <button mat-raised-button color="primary" routerLink="/editskill/{{skill.id}}">
+                    <mat-icon>edit</mat-icon>
                 </button>
             </td>
             <td *ngIf="isLogged">
-                <button mat-fab color="warn" aria-label="Ex" 
-                style="margin-bottom: 5px;" 
-                (click)="delete(skill.id)">
-                <mat-icon>delete</mat-icon>
+                <button mat-fab color="warn" aria-label="Ex" style="margin-bottom: 5px;" (click)="delete(skill.id)">
+                    <mat-icon>delete</mat-icon>
                 </button>
 
             </td>
@@ -45,5 +29,4 @@
     </div>
 </div>
 
-<mat-divider></mat-divider> 
-<app-footer></app-footer>
+<mat-divider></mat-divider>

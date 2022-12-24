@@ -7,44 +7,53 @@
             </button>
         </div>
 
-        <div class="col lg 1"></div>
-        <div class="col-lg-11">
-            <table class="table">
-                <tbody>
-                    <tr *ngFor="let Educacion of educacion">
+        
+        <div class="col-lg-12">
+
+            <div class="table">
+                <div>
+                    <div *ngFor="let Educacion of educacion">
 
                         <div cdkDropListGroup>
 
                             <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
 
                                 <div class="example-box" *ngFor="let movie of movies" cdkDrag>
+
                                     <div class="example-custom-placeholder" *cdkDragPlaceholder></div>
                                     {{movie}}
-                                    
-                                    <td>
-                                        <mat-icon>bookmark</mat-icon><h3>{{Educacion.nombreE}}</h3>
-                                    </td>
-                                    <td>
+
+                                    <div>
+                                        <h2>{{Educacion.nombreE}}</h2>
+                                    </div>
+
+                                    <div>
                                         <p>{{Educacion.descripcionE}}</p>
-                                    </td>
-                                    <td *ngIf="isLogged">
+                                    </div>
+
+                                    <div *ngIf="isLogged">
                                         <button mat-raised-button color="accent"
                                             routerLink="/editaredu/{{Educacion.id}}">
-                                            EDITAR</button>
-                                    </td>
-                                    <td *ngIf="isLogged">
+                                            <mat-icon>edit</mat-icon></button>
+                                    </div>
+
+                                    <div *ngIf="isLogged">
                                         <button mat-fab color="warn" aria-label="Ex" style="margin-bottom: 5px;"
                                             (click)="delete(Educacion.id)">
                                             <mat-icon>delete</mat-icon></button>
-                                    </td>
+                                    </div>
+
+
+
                                 </div>
                             </div>
                         </div>
 
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+                    </div>
 
+                </div>
+            </div>
+
+        </div>
     </div>
 </div>

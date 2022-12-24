@@ -2,21 +2,20 @@
     <div class="container" >
 
         <div class="login" >
-            <button mat-button color="warn">Proyectos</button>
-            <button mat-button color="warn">Experiencia Laboral</button>
+            <button mat-button color="warn" routerLink="/proyecto">Proyectos</button>
+            <button mat-button color="warn" routerLink="/experiencia">Experiencia Laboral</button>
             <button mat-button color="warn" routerLink="/skill">Habilidades</button>
-            <button mat-button color="warn">Educación</button>
-            <button mat-raised-button color="primary">
-            <span class="material-symbols-outlined">login</span>
-            </button>
-            <button mat-raised-button color="warn"><mat-icon>settings_power</mat-icon></button>
+            <button mat-button color="warn" routerLink="/educacion">Educación</button>
+            <button mat-button color="warn" routerLink="/acerca">Acerca De Mi</button>
+
            
+            
+            <button mat-raised-button color="warn" 
+            (click)="onLogOut()" *ngIf="isLogged"><span class="material-symbols-outlined">login</span></button>
 
+            <button mat-raised-button color="warn" 
+            (click)="login()" *ngIf="!isLogged"><mat-icon>settings_power</mat-icon></button>
 
-            <button type="button" class="btn btn-outline-light" (click)="login()" 
-            *ngIf="!isLogged">INGRESAR</button>
-            <button type="button" class="btn btn-outline-light" (click)="onLogOut()"
-            *ngIf="isLogged">CERRARSESION</button>
 
         </div>
     </div>
