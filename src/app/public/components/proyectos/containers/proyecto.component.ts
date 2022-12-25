@@ -9,11 +9,11 @@ import { TokenService } from 'src/app/public/service/token.service';
   styleUrls: ['./proyecto.component.css']
 })
 export class ProyectoComponent implements OnInit {
-  proyecto: Proyecto[] = [];
+  proyecto: Proyecto[]=null;
 
 
   constructor(
-    private proyectoService: ProyectoService, 
+    public proyectoService: ProyectoService, 
     private tokenService: TokenService) { }
 
   isLogged = false;
@@ -37,7 +37,7 @@ export class ProyectoComponent implements OnInit {
         data => {
           this. cargarProyecto();
         }, err => {
-          alert("No se pudo borrar la experiencia");
+          alert("No se pudo borrar el proyecto");
         }
       )
     }

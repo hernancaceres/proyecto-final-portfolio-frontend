@@ -1,1 +1,32 @@
-<p>edit-proyecto works!</p>
+<div style="text-align: center; background: inherit">
+    <div class="container" *ngIf="proyecto">
+        <div class="row">
+            <div>
+                <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+                    <div class="form-group">
+                        <label for="nombreP">Nombre del proyecto</label>
+                        <input type="text" class="form-control" id="nombreP" name="nombreP"
+                            [(ngModel)]="proyecto.nombreP" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="descripcionP">Descripcion del Proyecto</label>
+                        <input type="text" class="form-control" id="descripcionP" name="descripcionP"
+                            [(ngModel)]="proyecto.descripcionP" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="imgP">Imagen</label>
+                        <input type="file" class="form-control" id="imgP" name="imgP"
+                        (change)="uploadImage($event)" accept=".jpg, .png" >
+                    </div>
+                    <div class="imgproyecto">
+                        <img [src] = "imgService.url" width="200px">
+                    </div>
+
+                    <br>
+                    <button mat-raised-button color="primary">Actualizar Proyecto</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

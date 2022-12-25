@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Storage, ref, uploadBytes, listAll, getDownloadURL } from '@angular/fire/storage';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Proyecto } from 'src/app/core/modele/proyecto';
+import { ImgService } from 'src/app/public/service/img';
+import { ProyectoService } from 'src/app/public/service/proyecto.service';
 
 @Component({
     selector: 'app-new-proyecto',
@@ -8,40 +12,42 @@ import { Storage, ref, uploadBytes, listAll, getDownloadURL } from '@angular/fir
 })
 export class NewProyectoComponent implements OnInit {
 
-    images: string[];
+    nombreP: string = '';
+    descripcionP: string = '';
+    imgP: string = '';
+   
+    proyecto: Proyecto=null;
 
-    constructor(private storage: Storage) {
-        this.images = [];
+    constructor(
+        
+        private router: Router,
+        private proyectoService: ProyectoService,
+        public imgService: ImgService,
+        private activatedRouter: ActivatedRoute,) {
+
     }
 
-    ngOnInit() { 
-        this.getImages();
+    ngOnInit(): void {
+    }
+
+    onCreate(): void {
+        const proyecto = new Proyecto(this.nombreP, this.descripcionP, this.imgP);
+        this.proyectoService.save(proyecto).subscribe(
+            data => {
+                alert("Proyecto añadido");
+                this.router.navigate(['']);
+            }, err => {
+                alert("Falló agregar proyecto");
+                this.router.navigate(['']);
+            }
+        )
     }
 
     uploadImage($event: any) {
-        const file = $event.target.files[0];
-        console.log(file);
-
-        const imgRef = ref(this.storage, `images/${file.name}`);
-
-        uploadBytes(imgRef, file)
-            .then(response => {console.log(response)})
-            .catch(error => console.log(error));
-
-    }
-
-    getImages() {
-        const imagesRef = ref(this.storage, 'images');
-    
-        listAll(imagesRef)
-          .then(async response => {
-            console.log(response);
-            this.images = [];
-            for (let item of response.items) {
-              const url = await getDownloadURL(item);
-              this.images.push(url);
-            }
-          })
-          .catch(error => console.log(error));
+        const id = this.activatedRouter.snapshot.params['id'];
+        const name= "fotoproyecto_" + id;
+        this.imgService.uploadImage($event, name)
+        
       }
+
 }
