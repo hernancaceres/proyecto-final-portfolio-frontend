@@ -36,11 +36,7 @@ export class EducacionComponent implements OnInit {
   }
 
   cargarEducacion(): void {
-    this.educacionS.lista().subscribe(
-      data => {
-        this.educacion = data;
-      }
-    )
+    this.educacionS.lista().subscribe(data => {this.educacion = data; })
   }
 
   delete(id?: number) {
@@ -54,4 +50,4 @@ export class EducacionComponent implements OnInit {
       )
     }
   }
-}
+} 

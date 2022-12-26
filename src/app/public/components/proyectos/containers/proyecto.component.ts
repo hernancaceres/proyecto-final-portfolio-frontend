@@ -9,11 +9,11 @@ import { TokenService } from 'src/app/public/service/token.service';
   styleUrls: ['./proyecto.component.css']
 })
 export class ProyectoComponent implements OnInit {
-  proyecto: Proyecto[]=null;
+  proyecto: Proyecto[] = [];
 
 
   constructor(
-    public proyectoService: ProyectoService, 
+    public proyectoService: ProyectoService,
     private tokenService: TokenService) { }
 
   isLogged = false;
@@ -31,11 +31,11 @@ export class ProyectoComponent implements OnInit {
     this.proyectoService.lista().subscribe(data => { this.proyecto = data; })
   }
 
-  delete(id?: number){
-    if(id != undefined){
+  delete(id?: number) {
+    if (id != undefined) {
       this.proyectoService.delete(id).subscribe(
         data => {
-          this. cargarProyecto();
+          this.cargarProyecto();
         }, err => {
           alert("No se pudo borrar el proyecto");
         }
@@ -44,4 +44,3 @@ export class ProyectoComponent implements OnInit {
   }
 
 }
-  

@@ -8,7 +8,7 @@ import { SharedModule } from './core/shared/shared.module';
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideStorage,getStorage } from '@angular/fire/storage';
-import { ImgService } from './public/service/img';
+import { ImgService } from './public/service/img.service';
 
 @NgModule({
   declarations: [

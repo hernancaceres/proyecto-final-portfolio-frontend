@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Proyecto } from 'src/app/core/modele/proyecto';
-import { ImageService } from 'src/app/public/service/image.service';
-import { ImgService } from 'src/app/public/service/img';
+import { ImgService } from 'src/app/public/service/img.service';
 import { ProyectoService } from 'src/app/public/service/proyecto.service';
 
 @Component({
@@ -12,10 +11,10 @@ import { ProyectoService } from 'src/app/public/service/proyecto.service';
 })
 export class EditProyectoComponent implements OnInit {
 
-  proyecto: Proyecto=null;
+  proyecto: Proyecto = null;
 
   constructor(
-    public proyectoService: ProyectoService, 
+    private proyectoService: ProyectoService,
     private activatedRouter: ActivatedRoute,
     private router: Router,
     public imgService: ImgService) { }
@@ -39,7 +38,7 @@ export class EditProyectoComponent implements OnInit {
       data => {
         this.router.navigate(['']);
       }, err => {
-        alert("Error al modificar editar-acerca-de");
+        alert("Error al modificar proyecto");
         this.router.navigate(['']);
       }
     )
@@ -47,9 +46,9 @@ export class EditProyectoComponent implements OnInit {
 
   uploadImage($event: any) {
     const id = this.activatedRouter.snapshot.params['id'];
-    const name= "fotoproyecto_" + id;
+    const name = "fotoproyecto_" + id;
     this.imgService.uploadImage($event, name)
-    
+
   }
 
 }
