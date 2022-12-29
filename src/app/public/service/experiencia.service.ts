@@ -9,7 +9,7 @@ import { environment } from "src/environments/environment";
 })
 export class ExperienciaService {
 
-  URL = 'http://localhost:8080/experiencia/';
+   URL = 'http://localhost:8080/experiencia/';
   //URL = environment.URL + 'experiencia/';
   //URL = 'https://ap2-production.up.railway.app/experiencia/';
 

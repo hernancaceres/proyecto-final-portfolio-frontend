@@ -12,7 +12,7 @@ import { environment } from 'src/environments/environment';
 
 export class PersonaService {
 
-    URL = 'http://localhost:8080/personas/';
+     URL = 'http://localhost:8080/personas/';
 
     //URL = environment.URL + 'personas/';
     // URL = 'https://ap2-production.up.railway.app/personas/';
