@@ -7,7 +7,7 @@
             </button>
         </div>
 
-        
+
         <div class="col-lg-12">
 
             <div class="table">
@@ -23,27 +23,50 @@
                                     <div class="example-custom-placeholder" *cdkDragPlaceholder></div>
                                     {{movie}}
 
-                                    <div>
-                                        <h2>{{Educacion.nombreE}}</h2>
+                                    <div class="row">
+
+                                        <div class="col-lg-1">
+                                            <h2>{{Educacion.empresaE}}</h2>
+                                        </div>
+
+                                        <div class="col-lg-10">
+                                            <ul>
+                                                <li>
+                                                    <h3>{{Educacion.nombreE}}</h3>
+                                                </li>
+                                                <li>
+                                                    <h3>{{Educacion.industriaE}}</h3>
+                                                </li>
+                                                <li>
+                                                    <h3>{{Educacion.fechaInicioEdu}} - {{Educacion.fechaFinEdu}}</h3>
+                                                </li>
+                                                
+                                                <li>
+                                                    <h3>{{Educacion.paisEdu}}</h3>
+                                                </li>
+                                                <li>
+                                                    <h3>{{Educacion.descripcionE}}</h3>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="col-lg-1">
+
+                                            <div *ngIf="isLogged">
+                                                <button mat-raised-button color="accent"
+                                                    routerLink="/editaredu/{{Educacion.id}}">
+                                                    <mat-icon>edit</mat-icon></button>
+                                            </div>
+
+                                            <div *ngIf="isLogged">
+                                                <button mat-fab color="warn" aria-label="Ex" style="margin-bottom: 5px;"
+                                                    (click)="delete(Educacion.id)">
+                                                    <mat-icon>delete</mat-icon></button>
+                                            </div>
+
+                                        </div>
+
                                     </div>
-
-                                    <div>
-                                        <p>{{Educacion.descripcionE}}</p>
-                                    </div>
-
-                                    <div *ngIf="isLogged">
-                                        <button mat-raised-button color="accent"
-                                            routerLink="/editaredu/{{Educacion.id}}">
-                                            <mat-icon>edit</mat-icon></button>
-                                    </div>
-
-                                    <div *ngIf="isLogged">
-                                        <button mat-fab color="warn" aria-label="Ex" style="margin-bottom: 5px;"
-                                            (click)="delete(Educacion.id)">
-                                            <mat-icon>delete</mat-icon></button>
-                                    </div>
-
-
 
                                 </div>
                             </div>

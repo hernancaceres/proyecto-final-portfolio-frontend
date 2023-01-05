@@ -32,6 +32,8 @@ import { ProyectoService } from './service/proyecto.service';
 import { ProyectoComponent } from './components/proyectos/containers/proyecto.component';
 import { NewProyectoComponent } from './components/proyectos/components/nuevo-proyecto/new-proyecto.component';
 import { EditProyectoComponent } from './components/proyectos/components/edit-proyecto/edit-proyecto.component';
+import { AudioModule } from '../audio/audio.module';
+
 
 
 
@@ -65,7 +67,8 @@ import { EditProyectoComponent } from './components/proyectos/components/edit-pr
     CommonModule,
     PublicRoutingModule,
     SharedModule,
-    NgCircleProgressModule.forRoot({ })
+    NgCircleProgressModule.forRoot({ }),
+    AudioModule
   ],
   providers: [
     AuthService,

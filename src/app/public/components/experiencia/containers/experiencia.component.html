@@ -1,60 +1,44 @@
-<div style=" background: inherit">
-    <div class="row">
-        <h1>Experiencia</h1>
-        <div class="col-lg-2">
-            <button mat-raised-button color="primary" routerLink="/newexp" *ngIf="isLogged">
-                Nueva Experiencia
-            </button>
+<div class="row">
+
+    <h1>Experiencia</h1>
+    <div class="col-lg-1">
+        <button mat-raised-button color="primary" routerLink="/newexp" *ngIf="isLogged">
+            Nueva Experiencia
+        </button>
+    </div>
+
+
+    <div class="contenedor" *ngFor="let Experiencia of experiencia ">
+
+
+        <div class="col-sm-12 col-md-3 col-lg-2 offset-md-1 offset.lg-1 parte1">
+            <img src={{Experiencia.imgExp}} class="img-fluid" id="fotoperfil">
         </div>
 
 
-        <div class="col-lg-12">
+        <div class="col-sm-12 col-md-7 col-lg-7 parte2">
+            <h1>{{Experiencia.nombreE}}</h1>
+            <P>{{Experiencia.modalidadE}}</P>
+            <P>{{Experiencia.empresaE}}</P>
+            <P>{{Experiencia.fechaInicioExp}} - {{Experiencia.fechaFinExp}}</P>
+            <P>{{Experiencia.pais}}</P>
+            <P>{{Experiencia.descripcionE}}</P>
 
-            <div class="table">
-                <div>
-                    <div *ngFor="let Experiencia of experiencia">
+        </div>
 
-                        <div cdkDropListGroup>
-
-                            <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
-
-                                <div class="example-box" *ngFor="let movie of movies" cdkDrag>
-
-                                    <div class="example-custom-placeholder" *cdkDragPlaceholder></div>
-                                    {{movie}}
-
-                                    <div>
-                                        <h2>{{Experiencia.nombreE}}</h2>
-                                    </div>
-
-                                    <div>
-                                        <p>{{Experiencia.descripcionE}}</p>
-                                    </div>
-
-                                    <div *ngIf="isLogged">
-                                        <button mat-raised-button color="accent"
-                                            routerLink="/editexp/{{Experiencia.id}}">
-                                            <mat-icon>edit</mat-icon></button>
-                                    </div>
-
-                                    <div *ngIf="isLogged">
-                                        <button mat-fab color="warn" aria-label="Ex" style="margin-bottom: 5px;"
-                                            (click)="delete(Experiencia.id)">
-                                            <mat-icon>delete</mat-icon></button>
-                                    </div>
-
-
-
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-
-                </div>
+        <div class="col-lg-2 parte2">
+            <div *ngIf="isLogged">
+                <button mat-raised-button color="accent" routerLink="/editexp/{{Experiencia.id}}">
+                    <mat-icon>edit</mat-icon></button>
             </div>
 
+            <div *ngIf="isLogged">
+                <button mat-fab color="warn" aria-label="Ex" style="margin-bottom: 5px;"
+                    (click)="delete(Experiencia.id)">
+                    <mat-icon>delete</mat-icon></button>
+            </div>
         </div>
+
     </div>
 </div>
 

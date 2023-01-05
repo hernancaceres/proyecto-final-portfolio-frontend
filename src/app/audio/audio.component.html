@@ -1,0 +1,10 @@
+<!-- Muestra el botón de "play" si el sonido no está reproduciéndose -->
+<button mat-raised-button color="Accent" (click)="playSound()" *ngIf="!isPlaying">
+    <mat-icon>play_circle_filled</mat-icon>
+  </button>
+  
+  <!-- Muestra el botón de "stop" si el sonido está reproduciéndose -->
+  <button mat-raised-button color="Accent" (click)="stopSound()" *ngIf="isPlaying">
+    <mat-icon>stop</mat-icon>
+  </button>
+  

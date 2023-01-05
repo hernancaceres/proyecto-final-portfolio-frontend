@@ -15,9 +15,11 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { NotFoundComponent } from "./component/not-found/not-found.component";
-import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatTableModule} from '@angular/material/table';
 import {DragDropModule} from '@angular/cdk/drag-drop';
+
+
 
 
 
@@ -44,7 +46,8 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
         MatDividerModule,
         MatSlideToggleModule,
         MatTableModule,
-        DragDropModule
+        DragDropModule,
+        
     ],
     providers: [],
     exports: [
@@ -67,7 +70,9 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
         MatSlideToggleModule,
         MatTableModule,
         MatTableModule,
-        DragDropModule
+        DragDropModule,
+        
+        
         
     ]
 })

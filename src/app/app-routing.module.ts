@@ -5,6 +5,7 @@ import { NotFoundComponent } from './core/shared/component/not-found/not-found.c
 const routes: Routes = [
   { path: '',loadChildren: () => import('./public/public.module').then(m => m.PublicModule) },
   { path: '**', component: NotFoundComponent, },
+  { path: '',loadChildren: () => import('./audio/audio.module').then(m => m.AudioModule) },
 ];
 
 @NgModule({
@@ -12,3 +13,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+ 

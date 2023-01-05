@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Experiencia } from 'src/app/core/modele/experiencia';
 import { ExperienciaService } from 'src/app/public/service/experiencia.service';
+import { ImgService } from 'src/app/public/service/img.service';
 
 @Component({
   selector: 'app-new-experiencia',
@@ -11,17 +12,29 @@ import { ExperienciaService } from 'src/app/public/service/experiencia.service';
 export class NewExperienciaComponent implements OnInit {
 
   nombreE: string = '';
+  modalidadE: string = '';
+  empresaE: string = '';
+  fechaInicioExp: string = '';
+  fechaFinExp: string = '';
+  pais: string = '';
   descripcionE: string = '';
+  imgExp: string = '';
 
   constructor(
-    private experienciaService: ExperienciaService, 
-    private router: Router) { }
+    private router: Router,
+    private experienciaService: ExperienciaService,
+    public imgService: ImgService,
+    ) { }
 
   ngOnInit(): void {
   }
 
   onCreate(): void {
-    const experiencia = new Experiencia(this.nombreE, this.descripcionE);
+    const id = Date.now().toString();
+    const experiencia = new Experiencia(this.nombreE, this.modalidadE, this.empresaE, this.fechaInicioExp, this.fechaFinExp, this.pais, this.descripcionE, this.imgExp);
+    if (!experiencia.imgExp) {
+      experiencia.imgExp = this.imgService.url;
+    }
     this.experienciaService.save(experiencia).subscribe(
       data => {
         alert("Experiencia añadida");
@@ -33,4 +46,10 @@ export class NewExperienciaComponent implements OnInit {
     )
   }
 
+  uploadImage($event: any) {
+    const id = Date.now().toString();
+    this.imgService.uploadImage($event, id);
+  }
+
 }
+ 

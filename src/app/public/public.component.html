@@ -4,28 +4,30 @@
     <div class="container">
 
       <div class="logo">
-        <img src="../../../../../assets/imagenes/APLogo.png" id="logo" routerLink="/home">
+        <img src="../../assets/imagenes/logo-ap-yoprogramo.png" id="logo" routerLink="/home">
       </div>
 
       <div class="modos">
-        
+
         <button mat-raised-button color="Accent"><span class="material-symbols-outlined">nest_heat_link_gen_3
           </span></button>
-        
+
         <button mat-raised-button color="Accent"><mat-icon>facebook</mat-icon></button>
 
-       
-        
+        <app-audio></app-audio>
 
-        <button mat-raised-button color="warn" (click)="onSetTheme('dark-theme')">
+
+        <!-- Muestra el botón de "modo oscuro" si el modo oscuro no está habilitado -->
+        <button mat-raised-button color="warn" (click)="onSetTheme('dark-theme')" *ngIf="!isDarkMode">
           <span class="material-symbols-outlined">dark_mode</span>
         </button>
 
-        <button mat-raised-button color="primary" (click)="onSetTheme('light-theme')">
+        <!-- Muestra el botón de "modo claro" si el modo oscuro está habilitado -->
+        <button mat-raised-button color="primary" (click)="onSetTheme('light-theme')" *ngIf="isDarkMode">
           <span class="material-symbols-outlined">light_mode</span>
         </button>
 
-       
+
       </div>
 
     </div>
@@ -34,6 +36,6 @@
   <app-header></app-header>
 
   <router-outlet></router-outlet>
-</div> 
+</div>
 
 <app-footer></app-footer>
