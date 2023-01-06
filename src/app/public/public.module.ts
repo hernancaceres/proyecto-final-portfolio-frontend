@@ -63,6 +63,9 @@ import { AudioModule } from '../audio/audio.module';
 
 
   ],
+
+entryComponents:[LoginComponent],
+
   imports: [
     CommonModule,
     PublicRoutingModule,

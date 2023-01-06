@@ -1,7 +1,9 @@
 import { OverlayContainer } from '@angular/cdk/overlay';
 import { ChangeDetectorRef, Component, EventEmitter, HostBinding, Input, OnChanges, Output, SimpleChanges, } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { MatSlideToggleChange } from '@angular/material/slide-toggle';
 import { Router } from '@angular/router';
+import { LoginComponent } from './components/login/containers/login.component';
 import { TokenService } from './service/token.service';
 
 @Component({
@@ -21,8 +23,19 @@ export class PublicComponent implements OnChanges {
     public overlayContainer: OverlayContainer,
     private router: Router,
     private tokenService: TokenService,
-    private changeDetectorRef: ChangeDetectorRef
-  ) { }
+    private changeDetectorRef: ChangeDetectorRef,
+    public dialog: MatDialog) { }
+
+  //comienza dialog
+  openDialog(){
+    const dialogRef = this.dialog.open(LoginComponent,{
+      width:'80%',
+      height: '80%',
+      
+    });
+  }
+  //termina dialog
+ 
   ngOnChanges(changes: SimpleChanges): void {
     throw new Error('Method not implemented.');
   }
