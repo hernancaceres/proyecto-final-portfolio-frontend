@@ -4,13 +4,50 @@
             <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
                 <div class="form-group">
                     <label for="nombreE">Nombre de la empresa</label>
-                    <input type="text" class="form-control" id="nombreE" name="nombreE" [(ngModel)]="nombreE" required>
+                    <input type="text" class="form-control" id="nombreE" name="nombreE" 
+                    [(ngModel)]="nombreE" required>
+                </div>
+                <div class="form-group">
+                    <label for="modalidadE">Modalidad</label>
+                    <input type="text" class="form-control" id="modalidadE" name="modalidadE" 
+                    [(ngModel)]="modalidadE" required>
+                </div>
+                <div class="form-group">
+                    <label for="empresaE">Empresa</label>
+                    <input type="text" class="form-control" id="empresaE" name="empresaE" 
+                    [(ngModel)]="empresaE" required>
+                </div>
+                <div class="form-group">
+                    <label for="fechaInicioExp">Fecha de inicio</label>
+                    <input type="text" class="form-control" id="fechaInicioExp" name="fechaInicioExp" 
+                    [(ngModel)]="fechaInicioExp" required>
+                </div>
+                <div class="form-group">
+                    <label for="fechaFinExp">Fecha de finalización</label>
+                    <input type="text" class="form-control" id="fechaFinExp" name="fechaFinExp" 
+                    [(ngModel)]="fechaFinExp" required>
+                </div>
+                <div class="form-group">
+                    <label for="pais">Pais</label>
+                    <input type="text" class="form-control" id="pais" name="pais"
+                        [(ngModel)]="pais" required>
                 </div>
                 <div class="form-group">
                     <label for="descripcionE">Descripcion de la tarea</label>
                     <input type="text" class="form-control" id="descripcionE" name="descripcionE"
                         [(ngModel)]="descripcionE" required>
                 </div>
+
+                <div class="form-group">
+                    <label for="imgExp">Imagen</label>
+                    <input type="file" class="form-control" id="imgExp" name="imgExp"
+                    (change)="uploadImage($event)" accept=".jpg, .png" >
+                </div>
+                <div class="imgproyecto">
+                    <img [src] = imgService.url width="200px">
+                </div>
+
+                <br>
 
                 <button mat-raised-button color="primary">Agregar una Experiencia</button>
             </form>

@@ -14,7 +14,7 @@ import { TokenService } from 'src/app/public/service/token.service';
 export class ExperienciaComponent implements OnInit {
 
   //comienza toogle
-  movies= [''];
+  movies = [''];
   drop(event: CdkDragDrop<string[]>) {
     moveItemInArray(this.movies, event.previousIndex, event.currentIndex);
   }
@@ -25,8 +25,6 @@ export class ExperienciaComponent implements OnInit {
   constructor(
     private experienciaService: ExperienciaService,
     private tokenService: TokenService) { }
-
-
 
   isLogged = false;
 
@@ -54,4 +52,3 @@ export class ExperienciaComponent implements OnInit {
     }
   }
 }
- 

@@ -3,8 +3,28 @@
         <div>
             <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
                 <div class="form-group">
-                    <label for="nombreE">Nombre de la institucion</label>
+                    <label for="nombreE">Nombre de la institución</label>
                     <input type="text" class="form-control" id="nombreE" name="nombreE" [(ngModel)]="educacion.nombreE" required>
+                </div>
+                <div class="form-group">
+                    <label for="empresaE">Nombre de la empresa</label>
+                    <input type="text" class="form-control" id="empresaE" name="empresaE" [(ngModel)]="educacion.empresaE" required>
+                </div>
+                <div class="form-group">
+                    <label for="industriaE">Nombre de la industria</label>
+                    <input type="text" class="form-control" id="industriaE" name="industriaE" [(ngModel)]="educacion.industriaE" required>
+                </div>
+                <div class="form-group">
+                    <label for="fechaInicioEdu">Fecha de inicio</label>
+                    <input type="text" class="form-control" id="fechaInicioEdu" name="fechaInicioEdu" [(ngModel)]="educacion.fechaInicioEdu" required>
+                </div>
+                <div class="form-group">
+                    <label for="fechaFinEdu">Fecha de finalización</label>
+                    <input type="text" class="form-control" id="fechaFinEdu" name="fechaFinEdu" [(ngModel)]="educacion.fechaFinEdu" required>
+                </div>
+                <div class="form-group">
+                    <label for="paisEdu">Pais</label>
+                    <input type="text" class="form-control" id="paisEdu" name="paisEdu" [(ngModel)]="educacion.paisEdu" required>
                 </div>
                 <div class="form-group">
                     <label for="descripcionE">Descripcion de sus estudios</label>

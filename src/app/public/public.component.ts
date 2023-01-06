@@ -1,10 +1,8 @@
-
 import { OverlayContainer } from '@angular/cdk/overlay';
 import { Component, EventEmitter, HostBinding, Input, OnInit, Output, } from '@angular/core';
 import { MatSlideToggleChange } from '@angular/material/slide-toggle';
 import { Router } from '@angular/router';
 import { TokenService } from './service/token.service';
-
 
 @Component({
   selector: 'app-public',
@@ -12,7 +10,6 @@ import { TokenService } from './service/token.service';
   styleUrls: ['./public.component.css']
 })
 export class PublicComponent implements OnInit {
-
   isLogged = false;
 
   //comienza material
@@ -46,6 +43,13 @@ export class PublicComponent implements OnInit {
   public onSetTheme(e: string) {
     this.overlayContainer.getContainerElement().classList.add(e);
     this.componetCssClass = e;
+
+    // Actualiza la variable isDarkMode cuando se cambia el tema
+    if (e === "dark-theme") {
+      this.isDarkMode = true;
+    } else {
+      this.isDarkMode = false;
+    }
   }
 
   @Input()
@@ -55,6 +59,7 @@ export class PublicComponent implements OnInit {
   readonly darkModeSwitched = new EventEmitter<boolean>();
 
   onDarkModeSwitched({ checked }: MatSlideToggleChange) {
+    this.isDarkMode = checked;
     this.darkModeSwitched.emit(checked);
   }
   //termina material
