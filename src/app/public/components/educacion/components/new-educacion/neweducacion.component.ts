@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Educacion } from 'src/app/core/modele/educacion';
 import { EducacionService } from 'src/app/public/service/educacion.service';
+import { ImgService } from 'src/app/public/service/img.service';
 
 @Component({
   selector: 'app-neweducacion',
@@ -9,21 +10,29 @@ import { EducacionService } from 'src/app/public/service/educacion.service';
   styleUrls: ['./neweducacion.component.css']
 })
 export class NeweducacionComponent implements OnInit {
-  nombreE!: string;
-  empresaE: string;
-  industriaE: string;
+  nombreEdu: string;
+  institucionEdu: string;
+  carreraEdu: string;
   fechaInicioEdu: string;
   fechaFinEdu: string;
   paisEdu: string;
-  descripcionE!: string;
+  descripcionEdu: string;
+  imgEdu: string = '';
 
-  constructor(private educacionS: EducacionService, private router: Router) { }
+  constructor(
+    private educacionS: EducacionService, 
+    private router: Router,
+    public imgService: ImgService,
+    ) { }
 
   ngOnInit(): void {
   }
 
   onCreate(): void{
-    const educacion = new Educacion(this.nombreE, this.empresaE, this.industriaE, this.fechaInicioEdu, this.fechaFinEdu, this.paisEdu, this.descripcionE);
+    const educacion = new Educacion(this.nombreEdu, this.institucionEdu, this.carreraEdu, this.fechaInicioEdu, this.fechaFinEdu, this.paisEdu, this.descripcionEdu, this.imgEdu);
+    if (!educacion.imgEdu) {
+      educacion.imgEdu = this.imgService.url;
+    }
     this.educacionS.save(educacion).subscribe(
       data =>{
         alert("Educacion añadida correctamente");
@@ -35,4 +44,9 @@ export class NeweducacionComponent implements OnInit {
     )
   }
 
-}
+  uploadImage($event: any) {
+    const id = Date.now().toString();
+    this.imgService.uploadImage($event, id);
+  }
+
+} 
