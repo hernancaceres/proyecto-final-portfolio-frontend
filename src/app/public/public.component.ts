@@ -1,5 +1,5 @@
 import { OverlayContainer } from '@angular/cdk/overlay';
-import { Component, EventEmitter, HostBinding, Input, OnInit, Output, } from '@angular/core';
+import { ChangeDetectorRef, Component, EventEmitter, HostBinding, Input, OnChanges, Output, SimpleChanges, } from '@angular/core';
 import { MatSlideToggleChange } from '@angular/material/slide-toggle';
 import { Router } from '@angular/router';
 import { TokenService } from './service/token.service';
@@ -9,7 +9,7 @@ import { TokenService } from './service/token.service';
   templateUrl: './public.component.html',
   styleUrls: ['./public.component.css']
 })
-export class PublicComponent implements OnInit {
+export class PublicComponent implements OnChanges {
   isLogged = false;
 
   //comienza material
@@ -20,14 +20,21 @@ export class PublicComponent implements OnInit {
   constructor(
     public overlayContainer: OverlayContainer,
     private router: Router,
-    private tokenService: TokenService) { }
+    private tokenService: TokenService,
+    private changeDetectorRef: ChangeDetectorRef
+  ) { }
+  ngOnChanges(changes: SimpleChanges): void {
+    throw new Error('Method not implemented.');
+  }
 
-  ngOnInit(): void {
+  ngDoCheck(): void {
     if (this.tokenService.getToken()) {
       this.isLogged = true;
     } else {
       this.isLogged = false;
     }
+
+    this.changeDetectorRef.detectChanges();
   }
 
   onLogOut(): void {
@@ -35,8 +42,10 @@ export class PublicComponent implements OnInit {
     window.location.reload();
   }
 
+
   login() {
     this.router.navigate(['/login'])
+
   }
 
   //comienza material
