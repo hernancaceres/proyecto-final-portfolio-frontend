@@ -1,5 +1,6 @@
 div{
     background-color: black;
+    
 }
 
 .container{
@@ -9,11 +10,9 @@ div{
     
 }
 
-
-
 #logo{
-    width: 300px;
-    padding: 10px;
+    width: 400px;
+    padding: 30px;
 }
 
 .modos i{

@@ -1,7 +1,7 @@
-<div class="row">
 
+<div class="row">
     <h1>Experiencia</h1>
-    <div class="col-lg-1">
+    <div class="col-lg-2">
         <button mat-raised-button color="primary" routerLink="/newexp" *ngIf="isLogged">
             Nueva Experiencia
         </button>
@@ -9,35 +9,31 @@
 
 
     <div class="contenedor" *ngFor="let Experiencia of experiencia ">
-
-
-        <div class="col-sm-12 col-md-3 col-lg-2 offset-md-1 offset.lg-1 parte1">
-            <img src={{Experiencia.imgExp}} class="img-fluid" id="fotoperfil">
+        <div class="col-sm-12 col-md-7 col-lg-7 parte1">
+            <h2>{{Experiencia.nombreE}}</h2>
+            <h3>{{Experiencia.modalidadE}}</h3>
+            <h3>{{Experiencia.empresaE}}</h3>
+            <h3>{{Experiencia.fechaInicioExp}} - {{Experiencia.fechaFinExp}}</h3>
+            <h3>{{Experiencia.pais}}</h3>
+            <h3>{{Experiencia.descripcionE}}</h3>
         </div>
 
-
-        <div class="col-sm-12 col-md-7 col-lg-7 parte2">
-            <h1>{{Experiencia.nombreE}}</h1>
-            <P>{{Experiencia.modalidadE}}</P>
-            <P>{{Experiencia.empresaE}}</P>
-            <P>{{Experiencia.fechaInicioExp}} - {{Experiencia.fechaFinExp}}</P>
-            <P>{{Experiencia.pais}}</P>
-            <P>{{Experiencia.descripcionE}}</P>
-
+        <div class="col-sm-12 col-md-3 col-lg-3 offset-md-1 offset.lg-1 parte2">
+            <img src={{Experiencia.imgExp}} class="img-fluid img-experiencia" >
         </div>
 
-        <div class="col-lg-2 parte2">
+        
             <div *ngIf="isLogged">
                 <button mat-raised-button color="accent" routerLink="/editexp/{{Experiencia.id}}">
                     <mat-icon>edit</mat-icon></button>
             </div>
 
             <div *ngIf="isLogged">
-                <button mat-fab color="warn" aria-label="Ex" style="margin-bottom: 5px;"
+                <button mat-fab color="warn" aria-label="Ex" style="margin: 3px;"
                     (click)="delete(Experiencia.id)">
                     <mat-icon>delete</mat-icon></button>
             </div>
-        </div>
+       
 
     </div>
 </div>
