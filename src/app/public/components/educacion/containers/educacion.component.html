@@ -2,40 +2,42 @@
 <div class="row">
     <h1>Educación</h1>
     <div class="col-lg-2">
-        <button mat-raised-button color="primary" routerLink="/newedu" *ngIf="isLogged">
+        <button mat-raised-button color="primary" 
+        *ngIf="isLogged" 
+        (click)="openDialog()">
             Nueva Educación
         </button>
     </div>
 
 
-    <div class="contenedor" *ngFor="let Educacion of educacion ">
+    <div class="contenedor" *ngFor="let educacionItem of educacion ">
         <div class="col-sm-12 col-md-7 col-lg-7 parte1">
-            <h2>{{Educacion.nombreEdu}}</h2>
-            <h3>{{Educacion.institucionEdu}}</h3>
-            <h3>{{Educacion.carreraEdu}}</h3>
-            <h3>{{Educacion.fechaInicioEdu}} - {{Educacion.fechaFinEdu}}</h3>
-            <h3>{{Educacion.paisEdu}}</h3>
-            <h3>{{Educacion.descripcionEdu}}</h3>
+            <h2>{{educacionItem.nombreEdu}}</h2>
+            <h3>{{educacionItem.institucionEdu}}</h3>
+            <h3>{{educacionItem.carreraEdu}}</h3>
+            <h3>{{educacionItem.fechaInicioEdu}} - {{educacionItem.fechaFinEdu}}</h3>
+            <h3>{{educacionItem.paisEdu}}</h3>
+            <h3>{{educacionItem.descripcionEdu}}</h3>
         </div>
 
         <div class="col-sm-12 col-md-3 col-lg-3 offset-md-1 offset.lg-1 parte2">
-            <img src={{Educacion.imgEdu}} class="img-fluid img-educacion" >
+            <img src={{educacionItem.imgEdu}} class="img-fluid img-educacion" >
         </div>
 
         
             <div *ngIf="isLogged">
-                <button mat-raised-button color="accent" routerLink="/editaredu/{{Educacion.id}}">
+                <button mat-raised-button color="accent" routerLink="/editaredu/{{educacionItem.id}}">
                     <mat-icon>edit</mat-icon></button>
             </div>
 
             <div *ngIf="isLogged">
                 <button mat-fab color="warn" aria-label="Ex" style="margin: 3px;"
-                    (click)="delete(Educacion.id)">
+                    (click)="delete(educacionItem.id)">
                     <mat-icon>delete</mat-icon></button>
             </div>
        
 
     </div>
 </div>
-
+ 
 <mat-divider></mat-divider>

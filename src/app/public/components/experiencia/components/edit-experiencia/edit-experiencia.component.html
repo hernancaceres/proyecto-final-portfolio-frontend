@@ -1,59 +1,60 @@
 <div style="text-align: center; background: inherit">
     <div class="container" *ngIf="experiencia">
-        <div class="row">
-            <div>
-                <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
-                    <div class="form-group">
-                        <label for="nombreE">Nombre de la empresa</label>
-                        <input type="text" class="form-control" id="nombreE" name="nombreE"
-                            [(ngModel)]="experiencia.nombreE" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="modalidadE">Modalidad</label>
-                        <input type="text" class="form-control" id="modalidadE" name="modalidadE"
-                            [(ngModel)]="experiencia.modalidadE" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="empresaE">Empresa</label>
-                        <input type="text" class="form-control" id="empresaE" name="empresaE"
-                            [(ngModel)]="experiencia.empresaE" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="fechaInicioExp">Fecha de inicio</label>
-                        <input type="text" class="form-control" id="fechaInicioExp" name="fechaInicioExp"
-                            [(ngModel)]="experiencia.fechaInicioExp" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="fechaFinExp">Fecha de finalización</label>
-                        <input type="text" class="form-control" id="fechaFinExp" name="fechaFinExp"
-                            [(ngModel)]="experiencia.fechaFinExp" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="pais">Pais</label>
-                        <input type="text" class="form-control" id="pais" name="pais"
-                            [(ngModel)]="experiencia.pais" required>
-                    </div>
-            
-                    <div class="form-group">
-                        <label for="descripcionE">Descripcion de la tarea</label>
-                        <input type="text" class="form-control" id="descripcionE" name="descripcionE"
-                            [(ngModel)]="experiencia.descripcionE" required>
-                    </div>
+        
+            <div class="row">
+                <div>
+                    <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+                        <div class="form-group">
+                            <label for="nombreE">Nombre de la empresa</label>
+                            <input type="text" class="form-control" id="nombreE" name="nombreE"
+                                [(ngModel)]="experiencia.nombreE" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="modalidadE">Modalidad</label>
+                            <input type="text" class="form-control" id="modalidadE" name="modalidadE"
+                                [(ngModel)]="experiencia.modalidadE" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="empresaE">Empresa</label>
+                            <input type="text" class="form-control" id="empresaE" name="empresaE"
+                                [(ngModel)]="experiencia.empresaE" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="fechaInicioExp">Fecha de inicio</label>
+                            <input type="text" class="form-control" id="fechaInicioExp" name="fechaInicioExp"
+                                [(ngModel)]="experiencia.fechaInicioExp" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="fechaFinExp">Fecha de finalización</label>
+                            <input type="text" class="form-control" id="fechaFinExp" name="fechaFinExp"
+                                [(ngModel)]="experiencia.fechaFinExp" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="pais">Pais</label>
+                            <input type="text" class="form-control" id="pais" name="pais" [(ngModel)]="experiencia.pais"
+                                required>
+                        </div>
 
-                    <div class="form-group">
-                        <label for="imgExp">Imagen</label>
-                        <input type="file" class="form-control" id="imgExp" name="imgExp"
-                        
-                        (change)="uploadImage($event)" accept=".jpg, .png" >
-                    </div>
-                    <div class="imgproyecto">
-                        <img [src] = "imgService.url" width="200px">
-                    </div>
+                        <div class="form-group">
+                            <label for="descripcionE">Descripcion de la tarea</label>
+                            <input type="text" class="form-control" id="descripcionE" name="descripcionE"
+                                [(ngModel)]="experiencia.descripcionE" required>
+                        </div>
 
-                    <br>
-                    <button mat-raised-button color="primary">Actualizar Experiencia</button>
-                </form>
+                        <div class="form-group">
+                            <label for="imgExp">Imagen</label>
+                            <input type="file" class="form-control" id="imgExp" name="imgExp"
+                                (change)="uploadImage($event)" accept=".jpg, .png">
+                        </div>
+                        <div class="imgproyecto">
+                            <img [src]="imgService.url" width="200px">
+                        </div>
+
+                        <br>
+                        <button mat-raised-button color="primary">Actualizar Experiencia</button>
+                    </form>
+                </div>
             </div>
-        </div>
+        
     </div>
-</div> 
+</div>

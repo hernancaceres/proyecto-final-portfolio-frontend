@@ -1,9 +1,13 @@
 
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { Experiencia } from 'src/app/core/modele/experiencia';
 import { ExperienciaService } from 'src/app/public/service/experiencia.service';
 import { TokenService } from 'src/app/public/service/token.service';
+import { EditExperienciaComponent } from '../components/edit-experiencia/edit-experiencia.component';
+import { NewExperienciaComponent } from '../components/new-experiencia/new-experiencia.component';
 
 
 @Component({
@@ -13,18 +17,46 @@ import { TokenService } from 'src/app/public/service/token.service';
 })
 export class ExperienciaComponent implements OnInit {
 
-  //comienza toogle
-  movies = [''];
-  drop(event: CdkDragDrop<string[]>) {
-    moveItemInArray(this.movies, event.previousIndex, event.currentIndex);
-  }
-  //termina toogle
 
   experiencia: Experiencia[] = [];
 
   constructor(
     private experienciaService: ExperienciaService,
-    private tokenService: TokenService) { }
+    private tokenService: TokenService,
+    public dialog: MatDialog,
+    private router: Router
+    ) { }
+
+  //comienza dialog
+  openDialog() {
+    const dialogRef = this.dialog.open(NewExperienciaComponent, {
+      width: '90%',
+      height: '95%',
+    });
+    dialogRef.afterClosed().subscribe( result => {
+      this.router.navigate(['experiencia']);
+    });
+    console.log("paso 1");
+    
+  }
+  //termina dialog
+  openEditDialog(id: number): void {
+    if(!isNaN(id)){
+    const dialogRef = this.dialog.open(EditExperienciaComponent, {
+    width: '90%',
+    height: '90%',
+    data: id
+    });
+    dialogRef.afterClosed().subscribe( result => {
+    this.router.navigate(['experiencia']);
+    });
+    }else{
+    console.log("Id no es un numero");
+    }
+    }
+
+
+
 
   isLogged = false;
 
@@ -36,6 +68,7 @@ export class ExperienciaComponent implements OnInit {
       this.isLogged = false;
     }
   }
+  
   cargarExperiencia(): void {
     this.experienciaService.lista().subscribe(data => { this.experiencia = data; })
   }
@@ -52,3 +85,4 @@ export class ExperienciaComponent implements OnInit {
     }
   }
 }
+ 

@@ -2,8 +2,9 @@
 <div class="row">
     <h1>Experiencia</h1>
     <div class="col-lg-2">
-        <button mat-raised-button color="primary" routerLink="/newexp" *ngIf="isLogged">
-            Nueva Experiencia
+        <button mat-raised-button color="primary" 
+        (click)="openDialog()" 
+        *ngIf="isLogged">Nueva Experiencia
         </button>
     </div>
 
@@ -33,9 +34,9 @@
                     (click)="delete(Experiencia.id)">
                     <mat-icon>delete</mat-icon></button>
             </div>
-       
+            
 
     </div>
 </div>
 
-<mat-divider></mat-divider>
+<mat-divider></mat-divider> 

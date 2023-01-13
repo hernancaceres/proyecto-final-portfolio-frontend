@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { LoginUsuario } from 'src/app/core/modele/login-usuario';
 import { AuthService } from 'src/app/public/service/auth.service';
@@ -19,7 +20,12 @@ export class LoginComponent implements OnInit {
   roles: string[] = [];
   errMsj!: string;
 
-  constructor(private tokenService: TokenService, private authService: AuthService, private router: Router) { }
+  constructor(
+    private tokenService: TokenService,
+    private authService: AuthService,
+    private router: Router,
+    private snack:MatSnackBar
+    ) { }
 
   ngOnInit(): void {
     if (this.tokenService.getToken()) {
@@ -30,6 +36,25 @@ export class LoginComponent implements OnInit {
   }
 
   onLogin(): void {
+
+    if(this.nombreUsuario.trim() == '' || this.nombreUsuario.trim() == null){
+      this.snack.open('El nombre de usuario es requerido !!','Aceptar',{
+        duration:4000,
+        verticalPosition : "top",
+        horizontalPosition : "center"
+      })
+      return;
+    }
+
+    if(this.password.trim() == '' || this.password.trim() == null){
+      this.snack.open('La contraseña es requerida !!','Aceptar',{
+        duration:4000,
+        verticalPosition : "top",
+        horizontalPosition : "center"
+      })
+      return;
+    }
+
     this.loginUsuario = new LoginUsuario(this.nombreUsuario, this.password);
     this.authService.login(this.loginUsuario).subscribe(data => {
       this.isLogged = true;
@@ -45,8 +70,13 @@ export class LoginComponent implements OnInit {
       this.errMsj = err.error.mensaje;
       console.log(this.errMsj);
 
+      this.snack.open('Ha ocurrido un error en el sistema !!','Aceptar',{
+        duration:4000,
+        verticalPosition : "top",
+        horizontalPosition : "center"
+    })
+
     })
   }
-
 
 }
