@@ -9,11 +9,13 @@
 
       <div class="modos">
 
-        <button mat-raised-button color="Accent"><span class="material-symbols-outlined">nest_heat_link_gen_3
-          </span></button>
-
-        <button mat-raised-button color="Accent"><mat-icon>facebook</mat-icon></button>
-
+        <a href="https://www.instagram.com/hernancaceresx/" target="_blank">
+          <button mat-raised-button color="Accent"><span
+              class="material-symbols-outlined">nest_heat_link_gen_3</span></button>
+        </a>
+        <a href="https://www.facebook.com/hernancaceresx" target="_blank">
+          <button mat-raised-button color="Accent"><mat-icon>facebook</mat-icon></button>
+        </a>
         <app-audio></app-audio>
 
 
@@ -27,13 +29,11 @@
           <span class="material-symbols-outlined">light_mode</span>
         </button>
 
-        <button mat-raised-button color="warn" 
-        (click)="onLogOut()" *ngIf="isLogged"><span class="material-symbols-outlined">login</span></button>
+        <button mat-raised-button color="warn" (click)="onLogOut()" *ngIf="isLogged"><span
+            class="material-symbols-outlined">login</span></button>
 
-        <button mat-raised-button color="warn" 
-         (click)="openDialog()" *ngIf="!isLogged"><mat-icon>settings_power</mat-icon></button>
-
-
+        <button mat-raised-button color="warn" (click)="openDialog()"
+          *ngIf="!isLogged"><mat-icon>settings_power</mat-icon></button>
 
       </div>
 
