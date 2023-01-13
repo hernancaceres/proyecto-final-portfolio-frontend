@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { Proyecto } from 'src/app/core/modele/proyecto';
 import { ProyectoService } from 'src/app/public/service/proyecto.service';
 import { TokenService } from 'src/app/public/service/token.service';
+import { NewProyectoComponent } from '../components/nuevo-proyecto/new-proyecto.component';
 
 @Component({
   selector: 'app-proyecto',
@@ -14,9 +17,25 @@ export class ProyectoComponent implements OnInit {
 
   constructor(
     public proyectoService: ProyectoService,
-    private tokenService: TokenService) { }
+    private tokenService: TokenService,
+    public dialog: MatDialog,
+    private router: Router
+    ) { }
 
   isLogged = false;
+
+  //comienza opendialog
+  openDialog() {
+    const dialogRef = this.dialog.open(NewProyectoComponent, {
+      width: '90%',
+      height: '95%',
+    });
+    dialogRef.afterClosed().subscribe( result => {
+      this.router.navigate(['proyecto']);
+    });
+    console.log("paso 1");
+  }
+  //termina opendialog
 
   ngOnInit(): void {
     this.cargarProyecto();
@@ -44,3 +63,4 @@ export class ProyectoComponent implements OnInit {
   }
 
 }
+ 

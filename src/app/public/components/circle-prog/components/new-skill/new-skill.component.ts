@@ -29,8 +29,6 @@ export class NewSkillComponent implements OnInit {
   onCreate(): void {
     const id = Date.now().toString();
     const skill = new Skill(this.nombreC, this.porcentaje);
-    
-  
     this.skillS.save(skill).subscribe(
       data => {
         console.log("paso 2");
