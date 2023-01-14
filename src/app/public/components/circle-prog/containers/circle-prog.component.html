@@ -2,7 +2,9 @@
 
     <h1>Hard & Soft skills</h1>
     <div class="col-lg-2">
-        <button button mat-raised-button color="primary" routerLink="/newskill" *ngIf="isLogged">Nueva Skill</button>
+        <button button mat-raised-button color="primary" 
+        (click)="openDialog()" 
+        *ngIf="isLogged">Nueva Skill</button>
     </div>
 
 
@@ -14,13 +16,17 @@
 
         <div>
             <td *ngIf="isLogged">
-                <button mat-raised-button color="primary" routerLink="/editskill/{{skill.id}}">
-                    <mat-icon>edit</mat-icon>
+                <button mat-raised-button color="primary" 
+                routerLink="/editskill/{{skill.id}}">
+                <mat-icon>edit</mat-icon>
                 </button>
             </td>
+
             <td *ngIf="isLogged">
-                <button mat-fab color="warn" aria-label="Ex" style="margin-bottom: 5px;" (click)="delete(skill.id)">
-                    <mat-icon>delete</mat-icon>
+                <button mat-fab color="warn" aria-label="Ex" 
+                style="margin-bottom: 5px;" 
+                (click)="delete(skill.id)">
+                <mat-icon>delete</mat-icon>
                 </button>
 
             </td>
@@ -28,5 +34,7 @@
 
     </div>
 </div>
+
+
 
 <mat-divider></mat-divider>

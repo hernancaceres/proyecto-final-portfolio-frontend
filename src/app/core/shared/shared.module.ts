@@ -18,7 +18,7 @@ import { NotFoundComponent } from "./component/not-found/not-found.component";
 import { MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatTableModule} from '@angular/material/table';
 import {DragDropModule} from '@angular/cdk/drag-drop';
-
+import {MatDialogModule} from '@angular/material/dialog';
 
 
 
@@ -47,6 +47,7 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
         MatSlideToggleModule,
         MatTableModule,
         DragDropModule,
+        MatDialogModule
         
     ],
     providers: [],
@@ -71,7 +72,7 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
         MatTableModule,
         MatTableModule,
         DragDropModule,
-        
+        MatDialogModule
         
         
     ]

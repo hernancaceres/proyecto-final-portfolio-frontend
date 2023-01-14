@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Skill } from 'src/app/core/modele/skill';
 import { SkillService } from 'src/app/public/service/skill.service';
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -11,11 +14,18 @@ import { SkillService } from 'src/app/public/service/skill.service';
 })
 export class EditSkillComponent implements OnInit {
   skill: Skill = null;
-
+  nombreC: string;
+  porcentaje: number;
+  
+ 
+  skills: Skill[];
   constructor(
     private skillService: SkillService,
     private activatedRouter: ActivatedRoute,
-    private router: Router) { }
+    private router: Router,
+    private snack: MatSnackBar,
+    
+  ) { }
 
   ngOnInit(): void {
     const id = this.activatedRouter.snapshot.params['id'];
@@ -29,6 +39,12 @@ export class EditSkillComponent implements OnInit {
     )
   }
 
+  editDialog(): void {
+    this.skillService.lista().subscribe(db => {
+      this.skills = db
+    });
+  }
+
   onUpdate(): void {
     const id = this.activatedRouter.snapshot.params['id'];
     this.skillService.update(id, this.skill).subscribe(
@@ -39,7 +55,31 @@ export class EditSkillComponent implements OnInit {
         this.router.navigate(['']);
       }
     )
+
   }
 
+  /* ngOnInit(): void {
+  const id = this.activatedRouter.snapshot.params['id'];
+  this.skillService.detail(id).subscribe(
+    data => {
+      this.skill = data;
+    }, err => {
+      alert("Error al modificar");
+      this.router.navigate(['']);
+    }
+  )
+}
 
+onUpdate(): void {
+  const id = this.activatedRouter.snapshot.params['id'];
+  this.skillService.update(id, this.skill).subscribe(
+    data => {
+      this.router.navigate(['']);
+    }, err => {
+      alert("Error al modificar la skill");
+      this.router.navigate(['']);
+    }
+  )
+}
+*/
 }

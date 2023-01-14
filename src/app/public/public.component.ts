@@ -1,7 +1,9 @@
 import { OverlayContainer } from '@angular/cdk/overlay';
-import { Component, EventEmitter, HostBinding, Input, OnInit, Output, } from '@angular/core';
+import { ChangeDetectorRef, Component, EventEmitter, HostBinding, Input, OnChanges, Output, SimpleChanges, } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { MatSlideToggleChange } from '@angular/material/slide-toggle';
 import { Router } from '@angular/router';
+import { LoginComponent } from './components/login/containers/login.component';
 import { TokenService } from './service/token.service';
 
 @Component({
@@ -9,7 +11,7 @@ import { TokenService } from './service/token.service';
   templateUrl: './public.component.html',
   styleUrls: ['./public.component.css']
 })
-export class PublicComponent implements OnInit {
+export class PublicComponent implements OnChanges {
   isLogged = false;
 
   //comienza material
@@ -20,14 +22,32 @@ export class PublicComponent implements OnInit {
   constructor(
     public overlayContainer: OverlayContainer,
     private router: Router,
-    private tokenService: TokenService) { }
+    private tokenService: TokenService,
+    private changeDetectorRef: ChangeDetectorRef,
+    public dialog: MatDialog) { }
 
-  ngOnInit(): void {
+  //comienza dialog
+  openDialog(){
+    const dialogRef = this.dialog.open(LoginComponent,{
+      width:'80%',
+      height: '80%',
+      
+    });
+  }
+  //termina dialog
+ 
+  ngOnChanges(changes: SimpleChanges): void {
+    throw new Error('Method not implemented.');
+  }
+
+  ngDoCheck(): void {
     if (this.tokenService.getToken()) {
       this.isLogged = true;
     } else {
       this.isLogged = false;
     }
+
+    this.changeDetectorRef.detectChanges();
   }
 
   onLogOut(): void {
@@ -35,8 +55,10 @@ export class PublicComponent implements OnInit {
     window.location.reload();
   }
 
+
   login() {
     this.router.navigate(['/login'])
+
   }
 
   //comienza material

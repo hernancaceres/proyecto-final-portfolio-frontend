@@ -1,5 +1,7 @@
 <div style="text-align: center; background: inherit">
     <div class="container" *ngIf="proyecto">
+
+
         <div class="row">
             <div>
                 <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
@@ -16,12 +18,11 @@
 
                     <div class="form-group">
                         <label for="imgP">Imagen</label>
-                        <input type="file" class="form-control" id="imgP" name="imgP"
-                        
-                        (change)="uploadImage($event)" accept=".jpg, .png" >
+                        <input type="file" class="form-control" id="imgP" name="imgP" (change)="uploadImage($event)"
+                            accept=".jpg, .png">
                     </div>
                     <div class="imgproyecto">
-                        <img [src] = "imgService.url" width="200px">
+                        <img [src]="imgService.url" width="200px">
                     </div>
 
                     <br>
@@ -29,5 +30,6 @@
                 </form>
             </div>
         </div>
+
     </div>
 </div>

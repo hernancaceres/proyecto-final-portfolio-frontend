@@ -1,22 +1,25 @@
 export class Educacion {
     id: number;
-    nombreE: string; 
-    empresaE: string;
-    industriaE: string;
+    nombreEdu: string; 
+    institucionEdu: string;
+    carreraEdu: string;
     fechaInicioEdu: string;
     fechaFinEdu: string;
     paisEdu: string;
-    descripcionE: string;
+    descripcionEdu: string;
+    imgEdu: string;
 
-    constructor(nombreE: string, descripcionE: string,empresaE: string, industriaE: string, fechaInicioEdu: string,fechaFinEdu: string, paisEdu: string)
+
+    constructor(nombreEdu: string, institucionEdu: string, carreraEdu: string, fechaInicioEdu: string,fechaFinEdu: string, paisEdu: string,descripcionEdu: string,imgEdu: string)
         
         {
-        this.nombreE = nombreE;
-        this.empresaE = empresaE;
-        this.industriaE = industriaE;
+        this.nombreEdu = nombreEdu;
+        this.institucionEdu = institucionEdu;
+        this.carreraEdu = carreraEdu;
         this.fechaInicioEdu = fechaInicioEdu;
         this.fechaFinEdu = fechaFinEdu;
         this.paisEdu = paisEdu;
-        this.descripcionE = descripcionE;
+        this.descripcionEdu = descripcionEdu;
+        this.imgEdu = imgEdu;
         }
 } 

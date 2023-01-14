@@ -20,6 +20,7 @@ export class ExperienciaService {
   }
 
   public detail(id: number): Observable<Experiencia> {
+    console.log(`ID: ${id}`);
     return this.httpClient.get<Experiencia>(this.URL + `detail/${id}`);
   }
 

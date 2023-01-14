@@ -2,7 +2,7 @@
 
     <h1>Proyectos realizados</h1>
     <div class="col-lg-2">
-        <button mat-raised-button color="primary" routerLink="/newproyect" *ngIf="isLogged">
+        <button mat-raised-button color="primary" (click)="openDialog()"  *ngIf="isLogged">
             Nuevo Proyecto
         </button>
     </div>
@@ -34,4 +34,4 @@
         </div>
 
     </div>
-</div>
+</div> 

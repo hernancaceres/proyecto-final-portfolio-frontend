@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { Experiencia } from 'src/app/core/modele/experiencia';
 import { ExperienciaService } from 'src/app/public/service/experiencia.service';
 import { ImgService } from 'src/app/public/service/img.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-new-experiencia',
@@ -24,6 +27,8 @@ export class NewExperienciaComponent implements OnInit {
     private router: Router,
     private experienciaService: ExperienciaService,
     public imgService: ImgService,
+    private snack: MatSnackBar,
+    public dialogRef: MatDialogRef<NewExperienciaComponent>
     ) { }
 
   ngOnInit(): void {
@@ -37,13 +42,21 @@ export class NewExperienciaComponent implements OnInit {
     }
     this.experienciaService.save(experiencia).subscribe(
       data => {
-        alert("Experiencia añadida");
+        console.log("paso 2");
+        console.log(data);
+        Swal.fire("Experiencia añadida", "Experiencia añadida con éxito en el sistema", "success");
         this.router.navigate(['']);
       }, err => {
-        alert("Falló agregar experiencia");
+        this.snack.open('Ha ocurrido un error en el sistema !!', 'Aceptar', {
+          duration: 4000,
+          verticalPosition: "top",
+          horizontalPosition: "center"
+        });
         this.router.navigate(['']);
       }
     )
+    this.dialogRef.close();
+    console.log("paso 3");
   }
 
   uploadImage($event: any) {
@@ -52,4 +65,4 @@ export class NewExperienciaComponent implements OnInit {
   }
 
 }
- 
+  

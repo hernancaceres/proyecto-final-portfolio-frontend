@@ -1,24 +1,16 @@
-<div class="row" class="px-0" >
-    <div class="container" >
+<div class="row" class="px-0">
+    <div class="container">
 
-        <div class="login" >
+        <div class="login">
             <button mat-button color="warn" routerLink="/proyecto">Proyectos</button>
             <button mat-button color="warn" routerLink="/experiencia">Experiencia Laboral</button>
             <button mat-button color="warn" routerLink="/skill">Habilidades</button>
             <button mat-button color="warn" routerLink="/educacion">Educación</button>
             <button mat-button color="warn" routerLink="/acerca">Acerca De Mi</button>
 
-           
-            
-            <button mat-raised-button color="warn" 
-            (click)="onLogOut()" *ngIf="isLogged"><span class="material-symbols-outlined">login</span></button>
 
-            <button mat-raised-button color="warn" 
-            (click)="login()" *ngIf="!isLogged"><mat-icon>settings_power</mat-icon></button>
-
-            
 
 
         </div>
     </div>
-</div> 
+</div>

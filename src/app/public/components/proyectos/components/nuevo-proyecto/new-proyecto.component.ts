@@ -1,8 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { MatDialogRef } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
+
+import { Router } from '@angular/router';
 import { Proyecto } from 'src/app/core/modele/proyecto';
 import { ImgService } from 'src/app/public/service/img.service';
 import { ProyectoService } from 'src/app/public/service/proyecto.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-new-proyecto',
@@ -20,7 +24,8 @@ export class NewProyectoComponent implements OnInit {
     private router: Router,
     private proyectoService: ProyectoService,
     public imgService: ImgService,
-    private activatedRouter: ActivatedRoute,
+    private snack: MatSnackBar,
+    public dialogRef: MatDialogRef<NewProyectoComponent>
 
   ) {}
 
@@ -34,20 +39,26 @@ export class NewProyectoComponent implements OnInit {
     }
     this.proyectoService.save(proyecto).subscribe(
       data => {
-        alert("Proyecto añadido");
+        console.log("paso 2");
+        console.log(data);
+        Swal.fire("Proyecto creado", "Proyecto creado con éxito en el sistema", "success");
         this.router.navigate(['']);
       }, err => {
-        alert("Falló agregar proyecto");
+        this.snack.open('Ha ocurrido un error en el sistema !!', 'Aceptar', {
+          duration: 4000,
+          verticalPosition: "top",
+          horizontalPosition: "center"
+        });
         this.router.navigate(['']);
       }
     )
+    this.dialogRef.close();
+    console.log("paso 3");
   }
 
   uploadImage($event: any) {
     const id = Date.now().toString();
     this.imgService.uploadImage($event, id);
   }
-
-
 
 } 
