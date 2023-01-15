@@ -34,8 +34,7 @@ export class NewSkillComponent implements OnInit {
         console.log("paso 2");
         console.log(data);
         Swal.fire("Skill creado", "Skill creado con éxito en el sistema", "success");
-       
-        this.router.navigate(['']);
+        this.router.navigate(['home']);
       }, err => {
         this.snack.open('Ha ocurrido un error en el sistema !!', 'Aceptar', {
           duration: 4000,

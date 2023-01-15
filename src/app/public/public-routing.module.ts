@@ -24,7 +24,7 @@ import { PublicComponent } from './public.component';
 const routes: Routes = [
   {
     path: '', component: PublicComponent, children: [
-      { path: '', redirectTo: 'home', pathMatch: 'full' },
+      { path: '', redirectTo: 'acerca', pathMatch: 'full' },
       { path: 'home', component: HomeComponent },
       { path: 'login', component: LoginComponent },
       { path: 'educacion', component: EducacionComponent },

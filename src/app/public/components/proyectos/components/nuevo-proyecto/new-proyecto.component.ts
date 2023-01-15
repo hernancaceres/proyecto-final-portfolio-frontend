@@ -42,14 +42,14 @@ export class NewProyectoComponent implements OnInit {
         console.log("paso 2");
         console.log(data);
         Swal.fire("Proyecto creado", "Proyecto creado con éxito en el sistema", "success");
-        this.router.navigate(['']);
+        this.router.navigate(['home']);
       }, err => {
         this.snack.open('Ha ocurrido un error en el sistema !!', 'Aceptar', {
           duration: 4000,
           verticalPosition: "top",
           horizontalPosition: "center"
         });
-        this.router.navigate(['']);
+        this.router.navigate(['proyecto']);
       }
     )
     this.dialogRef.close();
@@ -61,4 +61,4 @@ export class NewProyectoComponent implements OnInit {
     this.imgService.uploadImage($event, id);
   }
 
-} 
+}  

@@ -44,7 +44,7 @@ export class EditExperienciaComponent implements OnInit {
     this.experiencia.imgExp = this.imgService.url
     this.experienciaService.update(this.experiencia.id, this.experiencia).subscribe( // envia los datos actualizados al servicio de experiencias
       data => {
-        this.router.navigate(['']); // redirige al usuario a la página principal
+        this.router.navigate(['experiencia']); // redirige al usuario a la página principal
       }, err => {
         alert("Error al editar experiencia"); // alerta en caso de error
         this.router.navigate(['']); // redirige al usuario a la página principal

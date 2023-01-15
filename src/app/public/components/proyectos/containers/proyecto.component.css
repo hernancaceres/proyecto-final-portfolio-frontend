@@ -16,4 +16,14 @@
 .img-proyecto {
     box-shadow: 2px 2px 2px rgb(232, 241, 99);
     padding: 7px;
+    
+}
+
+@media (min-width: 768px) {
+    .img-proyecto {
+        box-shadow: 2px 2px 2px rgb(232, 241, 99);
+        padding: 7px;
+        margin-top: -175px;
+        
+    }
 }

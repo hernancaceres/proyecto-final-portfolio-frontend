@@ -10,9 +10,9 @@ import { Proyecto } from 'src/app/core/modele/proyecto';
 
 export class ProyectoService {
 
-    URL = 'http://localhost:8080/proyectos/';
+  //  URL = 'http://localhost:8080/proyectos/';
    
- // URL = 'https://ap2-production.up.railway.app/proyectos/';
+  URL = 'https://ap2-production.up.railway.app/proyectos/';
 
   constructor(private httpClient: HttpClient) { }
 

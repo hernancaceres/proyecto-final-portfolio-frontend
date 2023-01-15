@@ -28,7 +28,7 @@ export class EditeducacionComponent implements OnInit {
         this.educacion = data;
       }, err => {
         alert("Error al modificar");
-        this.router.navigate(['']);
+        this.router.navigate(['educacion']);
       }
     )
   }
@@ -38,10 +38,10 @@ export class EditeducacionComponent implements OnInit {
     this.educacion.imgEdu = this.imgService.url
     this.educacionS.update(id, this.educacion).subscribe(
       data => {
-        this.router.navigate(['']);
+        this.router.navigate(['educacion']);
       }, err => {
         alert("Error al modificar proyecto");
-        this.router.navigate(['']);
+        this.router.navigate(['educacion']);
       }
     )
   }

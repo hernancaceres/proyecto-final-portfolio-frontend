@@ -36,7 +36,7 @@ export class EditProyectoComponent implements OnInit {
     this.proyecto.imgP = this.imgService.url
     this.proyectoService.update(id, this.proyecto).subscribe(
       data => {
-        this.router.navigate(['']);
+        this.router.navigate(['proyecto']);
       }, err => {
         alert("Error al modificar proyecto");
         this.router.navigate(['']);

@@ -58,7 +58,7 @@ export class PublicComponent implements OnChanges {
 
   login() {
     this.router.navigate(['/login'])
-
+    
   }
 
   //comienza material

@@ -10,10 +10,10 @@ import { environment } from 'src/environments/environment';
 })
 export class SkillService {
 
-   URL = 'http://localhost:8080/skill/';
+  // URL = 'http://localhost:8080/skill/';
   
   //URL = environment.URL + 'skill/';
- //URL = 'https://ap2-production.up.railway.app/skill/';
+ URL = 'https://ap2-production.up.railway.app/skill/';
   
   constructor(private httpClient: HttpClient) { }
 

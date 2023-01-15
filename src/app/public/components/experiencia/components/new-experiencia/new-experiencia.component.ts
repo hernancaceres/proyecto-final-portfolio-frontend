@@ -45,7 +45,7 @@ export class NewExperienciaComponent implements OnInit {
         console.log("paso 2");
         console.log(data);
         Swal.fire("Experiencia añadida", "Experiencia añadida con éxito en el sistema", "success");
-        this.router.navigate(['']);
+        this.router.navigate(['home']);
       }, err => {
         this.snack.open('Ha ocurrido un error en el sistema !!', 'Aceptar', {
           duration: 4000,

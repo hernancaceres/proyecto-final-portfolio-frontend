@@ -50,7 +50,7 @@ export class NeweducacionComponent implements OnInit {
         data => {
           console.log(data);
           Swal.fire("Educacion añadida", "Educación añadida con éxito en el sistema", "success");
-          this.router.navigate(['']);
+          this.router.navigate(['home']);
         }, err => {
           console.log(err);
           this.snack.open('Ha ocurrido un error en el sistema !!', 'Aceptar', {
@@ -69,5 +69,4 @@ export class NeweducacionComponent implements OnInit {
     this.imgService.uploadImage($event, id);
   }
 
-
-}  
+}   

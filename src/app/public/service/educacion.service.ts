@@ -9,9 +9,9 @@ import { environment } from "src/environments/environment";
 })
 export class EducacionService {
 
-     URL = 'http://localhost:8080/educacion/';
+    // URL = 'http://localhost:8080/educacion/';
     //URL = environment.URL + 'educacion/';
-   // URL = 'https://ap2-production.up.railway.app/educacion/';
+   URL = 'https://ap2-production.up.railway.app/educacion/';
 
     constructor(private httpClient: HttpClient) { }
 

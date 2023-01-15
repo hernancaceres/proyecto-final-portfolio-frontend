@@ -11,9 +11,9 @@ import { environment } from "src/environments/environment";
 })
 export class AuthService {
 
-  //URL = 'https://ap2-production.up.railway.app/auth/';
+  URL = 'https://ap2-production.up.railway.app/auth/';
 
-   URL = 'http://localhost:8080/auth/';
+   //URL = 'http://localhost:8080/auth/';
 
   constructor(private httpClient: HttpClient) { }
 
